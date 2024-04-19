@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<title>Pagina Principal</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+
+			:root {
+				--primary-color: #0a0d14;
+				--primary-color-light: #20242f;
+				--secondary-color: #f49e09;
+				--extra-light: rgba(255, 255, 255, 0.5);
+				--white: #ffffff;
+				--max-width: 1200px;
+				--header-font: "Lisu Bosa", serif;
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			.section__container {
+				max-width: var(--max-width);
+				margin: auto;
+				padding: 5rem 1rem;
+			}
+
+			.section__header {
+				margin-bottom: 2rem;
+				font-size: 3rem;
+				font-weight: 800;
+				font-family: var(--header-font);
+				text-align: center;
+			}
+
+			.section__subheader {
+				max-width: 600px;
+				margin: auto;
+				text-align: center;
+			}
+
+			.btn {
+				padding: 0.75rem 1.5rem;
+				outline: none;
+				border: none;
+				font-size: 1rem;
+				color: var(--primary-color);
+				background-color: var(--secondary-color);
+				cursor: pointer;
+			}
+
+			img {
+				width: 100%;
+				display: flex;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			html,
+			body {
+				scroll-behavior: smooth;
+			}
+
+			body {
+				font-family: "Poppins", sans-serif;
+				color: var(--white);
+				background-color: var(--primary-color);
+			}
+
+			header {
+				background-image: linear-gradient(
+						to top,
+						var(--primary-color),
+						transparent
+					),
+					url("https://web-assets.esetstatic.com/wls/2021/08/por-qu%C3%A9-compa%C3%B1%C3%ADas-videojuegos-son-blanco-atractivo-cibercriminales.jpg");
+				background-position: center center;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			nav {
+				background-color: rgba(0, 0, 0, 0.5);
+				border-bottom: 1px solid var(--extra-light);
+			}
+
+			.nav__bar {
+				max-width: var(--max-width);
+				margin: auto;
+				padding: 1.5rem 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 2rem;
+			}
+
+			.nav__logo a {
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: var(--white);
+			}
+
+			.nav__links {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+			}
+
+			.link a {
+				padding: 1.5rem 5px;
+				font-weight: 500;
+				color: var(--white);
+				transition: 0.3s;
+			}
+
+			.link a:hover {
+				color: var(--secondary-color);
+				border-bottom: 2px solid var(--secondary-color);
+			}
+
+			.link span {
+				padding: 1rem 0;
+				color: var(--white);
+				cursor: pointer;
+			}
+
+			.header__container {
+				padding: 12rem 1rem;
+			}
+
+			.header__container h1 {
+				margin-bottom: 1rem;
+				max-width: 700px;
+				font-size: 4rem;
+				font-family: var(--header-font);
+			}
+
+			.header__container h4 {
+				position: relative;
+				margin-left: 3rem;
+				margin-bottom: 2rem;
+				font-size: 1rem;
+				font-weight: 500;
+			}
+
+			.header__container h4::after {
+				position: absolute;
+				content: "";
+				left: -3rem;
+				top: 50%;
+				transform: translateY(-50%);
+				height: 2px;
+				width: 2rem;
+				background-color: var(--white);
+			}
+
+			.about__container {
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.about__container :is(.section__header, .section__subheader) {
+				text-align: left;
+			}
+
+			.about__flex {
+				margin: 2rem 0;
+				padding: 2rem 1rem;
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				flex-wrap: wrap;
+				background-color: var(--primary-color-light);
+			}
+
+			.about__card {
+				flex: 1 1 150px;
+				text-align: center;
+				border-right: 2px solid var(--primary-color);
+			}
+
+			.about__card:last-child {
+				border: none;
+			}
+
+			.about__card h4 {
+				margin-bottom: 5px;
+				font-size: 3rem;
+				font-weight: 600;
+				font-family: var(--header-font);
+			}
+
+			.about__card p {
+				font-size: 0.9rem;
+			}
+
+			.about__image img {
+				max-width: 450px;
+				margin: auto;
+			}
+
+			.discover {
+				background-image: linear-gradient(
+					to bottom,
+					rgba(255, 255, 255, 0.05),
+					transparent
+				);
+			}
+
+			.discover__grid {
+				margin-top: 4rem;
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
+			}
+
+			.discover__card {
+				max-width: 320px;
+				margin: auto;
+			}
+
+			.discover__card:nth-child(2) {
+				transform: translateY(5rem);
+			}
+
+			.discover__image {
+				position: relative;
+			}
+
+			.discover__image::after {
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 50%;
+				left: 0;
+				bottom: 0;
+				background-image: linear-gradient(
+					to top,
+					var(--primary-color),
+					transparent
+				);
+			}
+
+			.discover__card__content {
+				padding: 0 2rem;
+				transform: translateY(-50%);
+			}
+
+			.discover__card__content h4 {
+				margin-bottom: 1rem;
+				font-size: 2rem;
+				font-weight: 800;
+				font-family: var(--header-font);
+				color: var(--secondary-color);
+			}
+
+			.discover__card__content p {
+				margin-bottom: 2rem;
+			}
+
+			.discover__btn {
+				padding: 0.75rem 1rem;
+				outline: none;
+				font-size: 1rem;
+				color: var(--white);
+				background-color: transparent;
+				border: 1px solid var(--white);
+				cursor: pointer;
+			}
+
+			.blogs__container {
+				padding: 5rem 0;
+			}
+
+			.blogs__grid {
+				margin-top: 4rem;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+			}
+
+			.blogs__card {
+				position: relative;
+			}
+
+			.blogs__card::after {
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background-image: linear-gradient(
+					to top,
+					var(--primary-color),
+					transparent
+				);
+			}
+
+			.blogs__content {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				padding: 2rem;
+				font-size: 1.2rem;
+				font-weight: 500;
+				z-index: 1;
+			}
+
+			.contact {
+				background-image: linear-gradient(
+					to top,
+					rgba(255, 255, 255, 0.05),
+					transparent
+				);
+			}
+
+			.contact__container {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 2rem;
+				align-items: center;
+			}
+
+			.contact__card {
+				max-width: 250px;
+				margin: auto;
+				aspect-ratio: 1;
+				display: grid;
+				place-content: center;
+				text-align: center;
+				border: 1px solid var(--extra-light);
+				border-radius: 100%;
+				cursor: pointer;
+			}
+
+			.contact__card span {
+				margin-bottom: 1rem;
+				font-size: 2rem;
+				transition: 0.3s;
+			}
+
+			.contact__card:hover span {
+				color: var(--secondary-color);
+			}
+
+			.contact__col h4 {
+				margin-bottom: 1rem;
+				font-size: 2.5rem;
+				font-weight: 800;
+				font-family: var(--header-font);
+			}
+
+			.contact__col h5 {
+				margin-bottom: 0.5rem;
+				font-size: 1.5rem;
+				font-weight: 600;
+				font-family: var(--header-font);
+			}
+
+			.footer__container {
+				text-align: center;
+			}
+
+			.footer__container h4 {
+				margin-bottom: 1rem;
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+
+			.footer__socials {
+				margin-bottom: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+			}
+
+			.footer__socials span a {
+				font-size: 1.5rem;
+				color: var(--white);
+				cursor: pointer;
+				transition: 0.3s;
+			}
+
+			.footer__socials span a:hover {
+				color: var(--secondary-color);
+			}
+
+			.footer__container p {
+				max-width: 600px;
+				margin: auto;
+				margin-bottom: 4rem;
+			}
+
+			.footer__nav {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 2rem;
+			}
+
+			.footer__link a {
+				font-weight: 500;
+				color: var(--white);
+			}
+
+			.footer__link a:hover {
+				color: var(--secondary-color);
+			}
+
+			.footer__bar {
+				padding: 1rem;
+				text-align: center;
+				font-size: 0.8rem;
+				border-top: 1px solid var(--extra-light);
+			}
+
+			@media (width < 900px) {
+				.link:not(.search) {
+					display: none;
+				}
+
+				.about__container {
+					grid-template-columns: repeat(1, 1fr);
+					text-align: center;
+				}
+
+				.about__container :is(.section__header, .section__subheader) {
+					text-align: center;
+				}
+
+				.about__image {
+					grid-area: 1/1/2/2;
+				}
+
+				.discover__grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.blogs__grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.journals__grid {
+					grid-template-columns: repeat(2, 1fr);
+					gap: 1rem;
+				}
+
+				.hero__container p {
+					font-size: 10rem;
+				}
+
+				.gallery__grid {
+					grid-template-columns: repeat(3, 1fr);
+				}
+
+				.contact__container {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.contact__col:first-child {
+					grid-area: 1/1/2/3;
+					text-align: center;
+				}
+			}
+
+			@media (width < 600px) {
+				.header__container {
+					text-align: center;
+				}
+
+				.header__container h4 {
+					margin-left: 0;
+				}
+
+				.about__card {
+					border: none;
+				}
+
+				.discover__grid {
+					grid-template-columns: repeat(1, 1fr);
+				}
+
+				.discover__card:nth-child(2) {
+					transform: translateY(0);
+				}
+
+				.blogs__grid {
+					grid-template-columns: repeat(1, 1fr);
+				}
+
+				.journals__grid {
+					grid-template-columns: repeat(1, 1fr);
+				}
+
+				.hero__container p {
+					font-size: 6rem;
+				}
+
+				.gallery__grid {
+					grid-template-columns: repeat(2, 1fr);
+				}
+
+				.contact__container {
+					grid-template-columns: repeat(1, 1fr);
+				}
+
+				.contact__col:first-child {
+					grid-area: unset;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header id="home">
+			<nav>
+				<div class="nav__bar">
+					<div class="nav__logo"><a href="#">GAMERTECA</a></div>
+					<ul class="nav__links">
+						<li class="link"><a href="#inicio">Inicio</a></li>
+						<li class="link">
+							<a href="Nuevos Juegos.html" target="_self"
+								>Lanzamientos</a
+							>
+						</li>
+						<li class="link">
+							<a href="Proximos Eventos.html" target="_self"
+								>Eventos</a
+							>
+						</li>
+						<li class="link">
+							<a href="Historia.html" target="_self">Historia</a>
+						</li>
+						<li class="link">
+							<a href="#Comunidad" target="_self">Comunidad</a>
+						</li>
+						<li class="link search">
+							<span><i class="ri-search-line"></i></span>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="section__container header__container">
+				<h1>EVO 2024</h1>
+				<h4>El EVO CHAMPIONSHIP SERIES cada vez esta mas cerca</h4>
+				<a href="https://www.youtube.com/watch?v=CQ9cayRx0FI"><button class="btn">
+					Saber Mas <i class="ri-arrow-right-line"></i>
+				</button></a>
+			</div>
+		</header>
+
+		<section class="about" id="about">
+			<div class="section__container about__container">
+				<div class="about__content">
+					<h2 class="section__header">¿Evento del año?</h2>
+					<p class="section__subheader">
+						La competencia de juegos de pelea mas importante del
+						mundo se acerca, una nueva edicion de este torneo se
+						aproxima y figuras del mundo de los esports como MKLEO,
+						MENA, SONICFOX, FILIPINOCHANG, etc. Se preparan para la
+						contienda y ver quien se convierte en el rey definitivo,
+						juegos como MORTAL KOMBAT, KOF, MARVEL VS CAPCOM seran
+						los protagonistas de esta edicion.
+					</p>
+					<div class="about__flex">
+						<div class="about__card">
+							<h4>Locacion</h4>
+							<p>Centro de convenciones Las Vegas, Nevada</p>
+						</div>
+						<div class="about__card">
+							<h4>Fecha</h4>
+							<p>19-21 de Julio</p>
+						</div>
+						<div class="about__card">
+							<h4>Streaming</h4>
+							<p>Twich, Kick, Facebook Gaming</p>
+						</div>
+					</div>
+				</div>
+				<div class="about__image">
+					<img
+						src="https://ca-times.brightspotcdn.com/dims4/default/cd4bb47/2147483647/strip/true/crop/5568x3712+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F8e%2Fe2%2Fe6e96d17476db254d9d0e95bf6f1%2Fhttps-delivery.gettyimages.com%2Fdownloads%2F1149603451"
+						alt="about"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section class="discover" id="discover">
+			<div class="section__container discover__container">
+				<h2 class="section__header">NOVEDADES</h2>
+				<p class="section__subheader">Lo Nuevo del mundo virtual</p>
+				<div class="discover__grid">
+					<div class="discover__card">
+						<div class="discover__image">
+							<img
+								src="https://i.pinimg.com/originals/fc/84/0d/fc840d0db64fab10717846f3d11efb66.jpg"
+								alt="discover"
+							/>
+						</div>
+						<div class="discover__card__content">
+							<h4>ACTUALIZACION</h4>
+							<p>
+								Una actualizion llega a CALL OF DUTY: WARZONE,
+								nuevo contenido se acerca, accion, nuevas armas,
+								lugares por descubrir, !LISTOS PARA LA BATALLA¡
+							</p>
+							<button class="discover__btn">
+								Leer Mas <i class="ri-arrow-right-line"></i>
+							</button>
+						</div>
+					</div>
+					<div class="discover__card">
+						<div class="discover__image">
+							<img
+								src="https://lh3.googleusercontent.com/proxy/BfjLd1-OCR0PZeWj1tL3mqvpKxDsCEKMKylLgCiALkDyPA4tSfynGem6MyzKtu4b9RghjnMJ-M8Slx_e1SlYzuQ3nIneOn23yRJgU64Fw6yc_oinh4z_ix3f9hf2Y38fpPvVP-Gh_A"
+								alt="discover"
+							/>
+						</div>
+						<div class="discover__card__content">
+							<h4>BOX BOX</h4>
+							<p>
+								Una nueva entrega de Formula 1 esta llegando,
+								conduce por las calles de Monaco o prueba la
+								nueva pista de las Vegas.
+							</p>
+							<button class="discover__btn">
+								Leer Mas <i class="ri-arrow-right-line"></i>
+							</button>
+						</div>
+					</div>
+					<div class="discover__card">
+						<div class="discover__image">
+							<img
+								src="https://i.pinimg.com/736x/b7/64/d3/b764d3546a4a6910acb27faf851af2ab.jpg"
+								alt="discover"
+							/>
+						</div>
+						<div class="discover__card__content">
+							<h4>EL REY</h4>
+							<p>
+								Minecraft se adueña de las plataformas de
+								streamig, posicionandose como el preferido de la
+								Comunidad
+							</p>
+							<button class="discover__btn">
+								Leer Mas <i class="ri-arrow-right-line"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="blogs" id="blog">
+			<div class="blogs__container">
+				<h2 class="section__header">Entretenimiento</h2>
+				<p class="section__subheader">
+					Informacion, datos curiosos, historias, top's, todo eso y
+					mas aqui.
+				</p>
+				<div class="blogs__grid">
+					<div class="blogs__card">
+						<img
+							src="https://static-cdn.jtvnw.net/jtv_user_pictures/elfedelobo-profile_image-1d74acb6f0797ea1-300x300.png"
+							alt="blog"
+						/>
+						<div class="blogs__content">FEDELOBO</div>
+					</div>
+					<div class="blogs__card">
+						<img
+							src="https://yt3.googleusercontent.com/pA8UkZ4BMFB--f7Kdk3Upj8v3NxFGn_BDdm1EX1aXC94FDB3-b4IKsGeQ4tq_0Xg5J7QMMALO5o=s900-c-k-c0x00ffffff-no-rj"
+							alt="blog"
+						/>
+						<div class="blogs__content">AtomiK.O</div>
+					</div>
+					<div class="blogs__card">
+						<img
+							src="https://static-cdn.jtvnw.net/jtv_user_pictures/92afa0c4-1237-492d-89a8-15f949f712c0-profile_image-300x300.png"
+							alt="blog"
+						/>
+						<div class="blogs__content">PEPE EL MAGO</div>
+					</div>
+					<div class="blogs__card">
+						<img
+							src="https://i.pinimg.com/originals/e0/a6/3d/e0a63d638fa1605aacf88a83401b22bb.jpg"
+							alt="blog"
+						/>
+						<div class="blogs__content">EL ULTIMO CIRCULO</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="footer">
+			<div class="section__container footer__container">
+				<h4>GAMERTECA</h4>
+				<div class="footer__socials">
+					<span>
+						<a href="#"><i class="ri-facebook-fill"></i></a>
+					</span>
+					<span>
+						<a href="#"><i class="ri-instagram-fill"></i></a>
+					</span>
+					<span>
+						<a href="#"><i class="ri-twitter-fill"></i></a>
+					</span>
+					<span>
+						<a href="#"><i class="ri-linkedin-fill"></i></a>
+					</span>
+				</div>
+				<p>
+					Pagina destinada a la informacion, difusion y
+					entretenimiento sobre videojuegos.
+				</p>
+				<ul class="footer__nav">
+					<li class="footer__link"><a href="#inicio">Inicio</a></li>
+					<li class="footer__link">
+						<a href="Nuevos Juegos.html" target="_self"
+							>Lanzamientos</a
+						>
+					</li>
+					<li class="footer__link">
+						<a href="Historia.html" target="_self">Historia</a>
+					</li>
+					<li class="footer__link">
+						<a href="Proximos Eventos.html" target="_self"
+							>Eventos</a
+						>
+					</li>
+					<li class="footer__link">
+						<a href="#Comunidad" target="_self">Comunidad</a>
+					</li>
+				</ul>
+			</div>
+			<div class="footer__bar">
+				BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
+				<br />
+				FACULTAD DE CIENCIAS DE LA COMPUTACION
+				<br />
+				2024
+			</div>
+		</section>
+
+		<script>
+			const scrollRevealOption = {
+				distance: "50px",
+				origin: "bottom",
+				duration: 1000,
+			};
+
+			// header container
+			ScrollReveal().reveal(".header__container h1", scrollRevealOption);
+
+			ScrollReveal().reveal(".header__container h4", {
+				...scrollRevealOption,
+				delay: 500,
+			});
+
+			ScrollReveal().reveal(".header__container .btn", {
+				...scrollRevealOption,
+				delay: 1000,
+			});
+
+			// about container
+			ScrollReveal().reveal(
+				".about__container .section__header",
+				scrollRevealOption
+			);
+			ScrollReveal().reveal(".about__container .section__subheader", {
+				...scrollRevealOption,
+				delay: 500,
+			});
+
+			ScrollReveal().reveal(".about__container .about__flex", {
+				...scrollRevealOption,
+				delay: 1000,
+			});
+
+			ScrollReveal().reveal(".about__container .btn", {
+				...scrollRevealOption,
+				delay: 1500,
+			});
+
+			// discover container
+			ScrollReveal().reveal(".discover__card", {
+				...scrollRevealOption,
+				interval: 500,
+			});
+
+			ScrollReveal().reveal(".discover__card__content", {
+				...scrollRevealOption,
+				interval: 500,
+				delay: 200,
+			});
+
+			// blogs container
+			ScrollReveal().reveal(".blogs__card", {
+				duration: 1000,
+				interval: 400,
+			});
+
+			// journals container
+			ScrollReveal().reveal(".journals__card", {
+				...scrollRevealOption,
+				interval: 400,
+			});
+		</script>
+	</body>
+</html>
