@@ -11,7 +11,7 @@
 				margin: 0;
 				background-color: #000;
 				color: #eee;
-				font-family: Poppins;
+				font-family: "Poppins", sans-serif;
 				font-size: 12px;
 			}
 
@@ -65,7 +65,7 @@
 			.slider .list .item .button button {
 				border: none;
 				background-color: #eee;
-				font-family: Poppins;
+				font-family: "Poppins", sans-serif;
 				font-weight: 500;
 				cursor: pointer;
 				transition: 0.4s;
@@ -264,9 +264,121 @@
 					font-size: 50px;
 				}
 			}
+			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+			.nav__bar {
+				max-width: var(--max-width);
+				margin: auto;
+				padding: 1.5rem 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 2rem;
+			}
+
+			.nav__logo a {
+				font-size: 1.2rem;
+				font-weight: 600;
+				color: var(--white);
+				text-decoration: none;
+			}
+
+			.nav__links {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				font-size: 16px;
+			}
+
+			.link a {
+				padding: 1.5rem 5px;
+				font-weight: 500;
+				color: var(--white);
+				transition: 0.3s;
+				text-decoration: none;
+			}
+
+			.link a:hover {
+				color: var(--secondary-color);
+				border-bottom: 2px solid var(--secondary-color);
+			}
+
+			.link span {
+				padding: 1rem 0;
+				color: var(--white);
+				cursor: pointer;
+			}
+			:root {
+				--primary-color: #0a0d14;
+				--primary-color-light: #20242f;
+				--secondary-color: #f49e09;
+				--extra-light: rgba(255, 255, 255, 0.5);
+				--white: #ffffff;
+				--max-width: 1200px;
+				--header-font: "Lisu Bosa", serif;
+			}
+			body {
+				font-family: "Poppins", sans-serif;
+				color: var(--white);
+				background-color: var(--primary-color);
+			}
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			nav {
+				display: block;
+				unicode-bidi: isolate;
+				background-color: rgba(0, 0, 0, 0.5);
+				border-bottom: 1px solid var(--extra-light);
+				position: relative;
+				z-index: 1000;
+			}
+			body {
+				font-family: "Poppins", sans-serif;
+				color: var(--white);
+				background-color: var(--primary-color);
+			}
+			:root {
+				--primary-color: #0a0d14;
+				--primary-color-light: #20242f;
+				--secondary-color: #f49e09;
+				--extra-light: rgba(255, 255, 255, 0.5);
+				--white: #ffffff;
+				--max-width: 1200px;
+				--header-font: "Lisu Bosa", serif;
+			}
 		</style>
 	</head>
 	<body>
+		<nav>
+			<div class="nav__bar">
+				<div class="nav__logo"><a href="#">GAMERTECA</a></div>
+				<ul class="nav__links">
+					<li class="link"><a href="#inicio">Inicio</a></li>
+					<li class="link">
+						<a href="Nuevos Juegos.html" target="_self"
+							>Lanzamientos</a
+						>
+					</li>
+					<li class="link">
+						<a href="Proximos Eventos.html" target="_self"
+							>Eventos</a
+						>
+					</li>
+					<li class="link">
+						<a href="Historia.html" target="_self">Historia</a>
+					</li>
+					<li class="link">
+						<a href="#Comunidad" target="_self">Comunidad</a>
+					</li>
+					<li class="link search">
+						<span><i class="ri-search-line"></i></span>
+					</li>
+				</ul>
+			</div>
+		</nav>
 		<div class="slider">
 			<div class="list">
 				<div class="item">
