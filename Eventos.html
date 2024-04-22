@@ -3,170 +3,45 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Eventos Proximos</title>
+		<title>Eventos</title>
 		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
-
-			*,
-			*::before,
-			*::after {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-				text-align: center;
-			}
-
-			body {
-				background-color: #eee;
-				min-height: 100vh;
-				font-family: "Poppins", sans-serif;
-			}
-
-			.card {
-				display: inline-block;
-				position: relative;
-				width: 400px;
-				min-width: 400px;
-				height: 400px;
-				border-radius: 30px;
-				overflow: hidden;
-				box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
-				margin: 30px;
-			}
-
-			.image {
-				height: 70%;
-			}
-
-			.text_container {
-				position: absolute;
-				top: 55%;
-				left: -5px;
-				height: 65%;
-				width: 108%;
-				background-image: linear-gradient(0deg, #3f5efb, #fc466b);
-				border-radius: 30px;
-				transform: skew(19deg, -9deg);
-			}
-
-			.text_container:hover {
-				background-image: linear-gradient(0deg, #fc466b, #3f5efb);
-			}
-
-			.second .text_container {
-				background-image: linear-gradient(-20deg, #bb7413, #e7d25c);
-			}
-			.second .text_container:hover {
-				background-image: linear-gradient(-20deg, #e7d25c, #bb7413);
-			}
-
+			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 			.logo {
-				height: 80px;
-				width: 80px;
-				border-radius: 20px;
-				background-color: #fff;
-				position: absolute;
-				left: 30px;
-				bottom: 30%;
-				overflow: hidden;
-				box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+				font-size: 1.3rem;
+				font-weight: 400;
+				color: var(--white);
+				font-family: "Press Start 2P", system-ui;
+				font-style: normal;
 			}
-
-			.logo img {
-				height: 100%;
-			}
-
-			.main_text {
-				position: absolute;
-				color: #fff;
-				font-weight: 900;
-				left: 150px;
-				bottom: 26%;
-			}
-
-			.card_btn {
-				position: absolute;
-				color: #fff;
-				right: 30px;
-				bottom: 10%;
-				padding: 10px 20px;
-				border: 1px solid #fff;
-				animation: animate 2s ease 0s infinite normal forwards;
-			}
-
-			@keyframes animate {
-				0% {
-					transform: translate(0);
-				}
-				20% {
-					transform: translate(-2px, 2px);
-				}
-				40% {
-					transform: translate(-2px, -2px);
-				}
-				60% {
-					transform: translate(2px, 2px);
-				}
-				80% {
-					transform: translate(2px, -2px);
-				}
-				100% {
-					transform: translate(0);
-				}
-			}
-
-			.card_btn:hover {
-				animation: none;
-			}
-
-			.card_btn a {
-				color: #fff;
-			}
-
-			.date {
-				position: absolute;
-				color: #fff;
-				left: 30px;
-				bottom: 10%;
-			}
-			a:-webkit-any-link {
-				text-decoration: none;
-			}
-			nav {
-				background-color: rgba(0, 0, 0, 0.5);
-				border-bottom: 1px solid var(--extra-light);
-			}
-			nav {
-				background-color: rgba(0, 0, 0, 0.5);
-				border-bottom: 1px solid var(--extra-light);
-			}
-
-			.nav__bar {
+			.nav_bar {
+				display: flex;
+				justify-content: space-between;
 				max-width: var(--max-width);
 				margin: auto;
-				padding: 1.5rem 1rem;
-				display: flex;
+				padding: 1.2rem 1rem;
 				align-items: center;
-				justify-content: space-between;
 				gap: 2rem;
 			}
 
-			.nav__logo a {
-				font-size: 1.2rem;
-				font-weight: 600;
+			.nav_logo a {
+				font-size: 1.3rem;
+				font-weight: 400;
 				color: var(--white);
+				font-family: "Press Start 2P", system-ui;
+				font-style: normal;
 			}
 
-			.nav__links {
-				list-style: none;
+			.nav_links {
+				font-size: 1rem;
 				display: flex;
+				list-style: none;
 				align-items: center;
 				gap: 2rem;
 			}
 
 			.link a {
-				padding: 1.5rem 5px;
+				padding: 1.3rem 5px;
 				font-weight: 500;
 				color: var(--white);
 				transition: 0.3s;
@@ -191,11 +66,15 @@
 				--max-width: 1200px;
 				--header-font: "Lisu Bosa", serif;
 			}
-			body {
-				font-family: "Poppins", sans-serif;
-				color: var(--white);
-				background-color: var(--primary-color);
+			img {
+				width: 100%;
+				display: flex;
 			}
+			a {
+				text-decoration: none;
+				color: var(--white);
+			}
+
 			* {
 				padding: 0;
 				margin: 0;
@@ -204,192 +83,362 @@
 			nav {
 				display: block;
 				unicode-bidi: isolate;
+				background-color: rgba(0, 0, 0, 0.5);
+				border-bottom: 1px solid var(--extra-light);
+				position: relative;
+				z-index: 1000;
 			}
 			body {
 				font-family: "Poppins", sans-serif;
 				color: var(--white);
 				background-color: var(--primary-color);
 			}
-			:root {
-				--primary-color: #0a0d14;
-				--primary-color-light: #20242f;
-				--secondary-color: #f49e09;
-				--extra-light: rgba(255, 255, 255, 0.5);
-				--white: #ffffff;
-				--max-width: 1200px;
-				--header-font: "Lisu Bosa", serif;
+			footer .section_container {
+
+				margin-bottom: 0;
+				padding-bottom: 0rem;
+				z-index: 0;
+			}
+			.footer_container {
+				text-align: center;
+			}
+
+			.footer_container h4 {
+				margin-bottom: 1rem;
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+
+			.footer_socials {
+				margin-bottom: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+			}
+
+			.footer_socials span a {
+				font-size: 1rem;
+				color: var(--white);
+				cursor: pointer;
+				transition: 0.3s;
+				text-decoration: none;
+			}
+
+			.footer_socials span a:hover {
+				color: var(--secondary-color);
+			}
+
+			.footer_container p {
+				max-width: 600px;
+				margin: auto;
+				margin-bottom: 2rem;
+			}
+
+			.footer_nav {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 2rem;
+			}
+
+			.footer_link a {
+				font-weight: 500;
+				color: var(--white);
+				text-decoration: none;
+			}
+
+			.footer_link a:hover {
+				color: var(--secondary-color);
+			}
+
+			.footer_bar {
+				padding: 1rem;
+				text-align: center;
+				font-size: 0.8rem;
+				border-top: 1px solid var(--extra-light);
+			}
+			.footer_bar p {
+				color: var(--white);
+			}
+			.card {
+				display: inline-block;
+				position: relative;
+				width: 24rem;
+				height: 24rem;
+				border-radius: 1.9rem;
+				overflow: hidden;
+				box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+				margin: 1.9rem;
+			}
+			.card_graphic {
+				position: absolute;
+				top: 55%;
+				height: 65%;
+				width: 108%;
+				background-image: linear-gradient(0deg, #3f5efb, #fc466b);
+				border-radius: 1.9rem;
+				transform: skew(19deg, -9deg);
+			}
+			.card_graphic:hover {
+				background-image: linear-gradient(0deg, #fc466b, #3f5efb);
+			}
+			.card_logo {
+				height: 5rem;
+				width: 5rem;
+				border-radius: 0.3rem;
+				background-color: transparent;
+				position: absolute;
+				left: 1.9rem;
+				bottom: 7.4rem;
+				overflow: hidden;
+				box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+			}
+			.main_text {
+				position: absolute;
+				color: #fff;
+				font-weight: 900;
+				left: 9.4rem;
+				bottom: 7rem;
+			}
+			.card_btn {
+				position: absolute;
+				color: #fff;
+				right: 1.9rem;
+				bottom: 1.9rem;
+				padding: 10px 20px;
+				border: 1px solid #fff;
+				animation: animate 2s ease 0s infinite normal forwards;
+				border-radius: 0.3rem;
+			}
+			@keyframes animate {
+				0% {
+					transform: translate(0);
+				}
+				20% {
+					transform: translate(-0.1rem, -0.1px);
+				}
+				40% {
+					transform: translate(-0.1rem, -0.1rem);
+				}
+				60% {
+					transform: translate(0.1rem, 0.1rem);
+				}
+				80% {
+					transform: translate(0.1rem, 0.1rem);
+				}
+				100% {
+					transform: translate(0);
+				}
+			}
+			.card_btn:hover {
+				animation: none;
+			}
+			.date {
+				position: absolute;
+				color: #fff;
+				left: 1.9rem;
+				bottom: 10%;
+			}
+			@media (width < 700px) {
+				.nav_bar {
+					flex-direction: column;
+					align-items: center;
+					padding: 0.5rem;
+				}
+				.nav_bar a {
+					padding: 0.25rem 0.5rem;
+				}
 			}
 		</style>
 	</head>
 	<body>
-		<header id="home">
+		<header>
 			<nav>
-				<div class="nav__bar">
-					<div class="nav__logo">
-						<a href="Pagina Principal.html">GAMERTECA</a>
+				<div class="nav_bar">
+					<div class="nav_logo">
+						<a href="Pagina Principal.html" class="logo"
+							>GAMERTECA</a
+						>
 					</div>
-					<ul class="nav__links">
+					<ul class="nav_links">
 						<li class="link">
-							<a href="Nuevos Juegos.html" target="_self"
+							<a href="Lanzamientos.html" target="_self"
 								>Lanzamientos</a
 							>
 						</li>
 						<li class="link">
-							<a href="Proximos Eventos.html" target="_self"
-								>Eventos</a
-							>
-						</li>
-						<li class="link">
 							<a href="Historia.html" target="_self">Historia</a>
-						</li>
-						<li class="link">
-							<a href="#Comunidad" target="_self">Comunidad</a>
-						</li>
-						<li class="link search">
-							<span><i class="ri-search-line"></i></span>
 						</li>
 					</ul>
 				</div>
 			</nav>
 		</header>
 
-		<div class="first card">
-			<img
-				src="https://cdn.arstechnica.net/wp-content/uploads/2022/08/296931603_1062491494373747_9126623648687951881_n-800x534.jpg"
-				alt=""
-				class="image"
-			/>
-			<div class="text_container"></div>
-			<div class="logo">
-				<img
-					src="data:image/jpeg;base64,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"
+		<section id="content">
+			<div class="cards">
+				<div class="card">
+					<img
+						src="https://cdn.arstechnica.net/wp-content/uploads/2022/08/296931603_1062491494373747_9126623648687951881_n-800x534.jpg"
+						alt=""
+						class="image"
+					/>
+					<div class="card_graphic"></div>
+					<div class="card_logo"	id="logo_card_1">
+						<img
+							src="https://upload.wikimedia.org/wikipedia/en/3/36/Evo_Championship_Series_Logo.png"
+							alt=""
+						/>
+					</div>
+					<div class="main_text"><p>EVO CHAMPIONSHIP SERIES</p></div>
+					<div class="date"><p>19-21 DE JULIO</p></div>
+					<div class="card_btn">
+						<a href="https://www.evo.gg/"><p>Mas Información</p></a>
+					</div>
+				</div>
+				<div class="card">
+					<img
+					src="https://prcdn.freetls.fastly.net/release_image/53399/91/53399-91-f6dff5872ac275ba049f425c46700ad7-1920x1080.png?format=jpeg&auto=webp&quality=85%2C65&width=1950&height=1350&fit=bounds"
 					alt=""
-				/>
-			</div>
-			<div class="main_text">
-				<p>EVO CHAMPIONSHIP SERIES</p>
-			</div>
-			<div class="date">
-				<p>19-21 DE JULIO</p>
-			</div>
-			<div class="card_btn">
-				<a href="#">Learn More</a>
-			</div>
-		</div>
-		<div class="second card">
-			<img
-				src="https://ca-times.brightspotcdn.com/dims4/default/132840f/2147483647/strip/false/crop/3276x2195+0+0/resize/1486x996!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F79%2Fe0%2Fb0f26b2c4dd7be88cad4feb841ff%2Fnintendo-at-e3-2018-39143.jpg"
-				alt=""
-				class="image"
-			/>
-			<div class="text_container"></div>
-			<div class="logo">
-				<img
-					src="https://gamerhub.co.uk/wp-content/uploads/2023/06/E3.jpg"
-					alt=""
-				/>
-			</div>
-			<div class="main_text">
-				<p>CONVENCION E3</p>
-			</div>
-			<div class="date">
-				<p>POR DEFINIRSE</p>
-			</div>
-			<div class="card_btn">
-				<a href="#">Mas Informacion</a>
-			</div>
-		</div>
-		<div class="first card">
-			<img
-				src="https://prcdn.freetls.fastly.net/release_image/53399/91/53399-91-f6dff5872ac275ba049f425c46700ad7-1920x1080.png?format=jpeg&auto=webp&quality=85%2C65&width=1950&height=1350&fit=bounds"
-				alt=""
-				class="image"
-			/>
-			<div class="text_container"></div>
-			<div class="logo">
-				<img
+					class="image"
+					/>
+					<div class="card_graphic"></div>
+					<div class="card_logo"	id="logo_card_1">
+						<img
 					src="https://indiegamessummit.tokyo/images/event_exhibition/logo.png"
 					alt=""
 				/>
-			</div>
-			<div class="main_text">
-				<p>TOKYO INDIE GAMES SUMMIT</p>
-			</div>
-			<div class="date">
-				<p>2-3 DE MARZO</p>
-			</div>
-			<div class="card_btn">
-				<a href="#">Mas Informacion</a>
-			</div>
-		</div>
-		<div class="first card">
-			<img
-				src="https://i0.wp.com/xxboxnews.blob.core.windows.net/prod/sites/4/XboxPartnerPreview_Slate-6f5ffc23ce694f6fc202-d7877aaeda66397760e9.jpg?resize=1920%2C1080&ssl=1"
-				alt=""
-				class="image"
-			/>
-			<div class="text_container"></div>
-			<div class="logo">
-				<img
+					</div>
+					<div class="main_text"><p>TOKYO INDIE GAMES SUMMIT</p></div>
+					<div class="date"><p>2-3 DE MARZO</p></div>
+					<div class="card_btn">
+						<a href="https://indiegamessummit.tokyo/en/"><p>Mas Información</p></a>
+					</div>
+				</div>
+				<div class="card">
+					<img
+					src="https://i0.wp.com/xxboxnews.blob.core.windows.net/prod/sites/4/XboxPartnerPreview_Slate-6f5ffc23ce694f6fc202-d7877aaeda66397760e9.jpg?resize=1920%2C1080&ssl=1"
+					alt=""
+					class="image"
+					/>
+					<div class="card_graphic"></div>
+					<div class="card_logo"	id="logo_card_1">
+						<img
 					src="https://seeklogo.com/images/X/xbox-logo-0DAE30CE6A-seeklogo.com.png"
 					alt=""
 				/>
-			</div>
-			<div class="main_text">
-				<p>XBOX PARTNER PREVIEW</p>
-			</div>
-			<div class="date">
-				<p>6 DE MARZO-19:00 hrs</p>
-			</div>
-			<div class="card_btn">
-				<a href="#">Mas Informacion</a>
-			</div>
-		</div>
-		<div class="second card">
-			<img
+					</div>
+					<div class="main_text"><p>XBOX PARTNER PREVIEW</p></div>
+					<div class="date"><p>6 DE MARZO <br>-19:00 hrs</p></div>
+					<div class="card_btn">
+						<a href="https://news.xbox.com/en-us/2024/03/06/xbox-partner-preview-march-2024-recap/"><p>Mas Información</p></a>
+					</div>
+				</div>
+				<div class="card">
+					<img
 				src="https://pbs.twimg.com/media/GG-Ep5LXQAAqX06?format=jpg&name=4096x4096"
 				alt=""
 				class="image"
 			/>
-			<div class="text_container"></div>
-			<div class="logo">
-				<img
+					<div class="card_graphic"></div>
+					<div class="card_logo"	id="logo_card_1">
+						<img
 					src="https://sf.esports.capcom.com/ccx/assets/img/logo/logo_ccx.png"
 					alt=""
 				/>
-			</div>
-			<div class="main_text">
-				<p>CAPCOM CUP</p>
-			</div>
-			<div class="date">
-				<p>27 DE NOVIEMBRE</p>
-			</div>
-			<div class="card_btn">
-				<a href="#">Mas Informacion</a>
-			</div>
-		</div>
-		<div class="first card">
-			<img
+					</div>
+					<div class="main_text"><p>CAPCOM CUP</p></div>
+					<div class="date"><p>27 DE NOVIEMBRE</p></div>
+					<div class="card_btn">
+						<a href="https://sf.esports.capcom.com/ccx/en/"><p>Mas Información</p></a>
+					</div>
+				</div>
+				<div class="card">
+					<img
 				src="https://www.eluniversal.com.mx/resizer/t3ybS8hrmXljfIblzQZUix4xG_E=/1100x666/cloudfront-us-east-1.images.arcpublishing.com/eluniversal/KPPQIZJADNFHZERBKNTVFYDM7A.jpg"
 				alt=""
 				class="image"
 			/>
-			<div class="text_container"></div>
-			<div class="logo">
-				<img
-					src="https://e7.pngegg.com/pngimages/24/817/png-clipart-playstation-4-raiders-of-the-broken-planet-playstation-network-playstation-plus-playstation-electronics-text.png"
+					<div class="card_graphic"></div>
+					<div class="card_logo"	id="logo_card_1">
+						<img
+					src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/PlayStation_logo.svg/1280px-PlayStation_logo.svg.png"
 					alt=""
 				/>
+					</div>
+					<div class="main_text"><p>PLAYSTATION SHOWCASE</p></div>
+					<div class="date"><p>24 DE MAYO</p></div>
+					<div class="card_btn">
+						<a href="https://blog.es.playstation.com/2023/05/26/resumen-de-playstation-showcase-2023-todos-los-anuncios/"><p>Mas Información</p></a>
+					</div>
+				</div>
+				<div class="card">
+					<img
+					src="https://ca-times.brightspotcdn.com/dims4/default/132840f/2147483647/strip/false/crop/3276x2195+0+0/resize/1486x996!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F79%2Fe0%2Fb0f26b2c4dd7be88cad4feb841ff%2Fnintendo-at-e3-2018-39143.jpg"
+					alt=""
+					class="image"
+					/>
+					<div class="card_graphic"></div>
+					<div class="card_logo"	id="logo_card_1">
+						<img
+					src="https://gamerhub.co.uk/wp-content/uploads/2023/06/E3.jpg"
+					alt=""
+				/>
+					</div>
+					<div class="main_text"><p>CONVENCION E3</p></div>
+					<div class="date"><p>POR DEFINIRSE</p></div>
+					<div class="card_btn">
+						<a href="https://e3expo.com/E3.html"><p>Mas Información</p></a>
+					</div>
+				</div>
 			</div>
-			<div class="main_text">
-				<p>PLAYSTATION SHOWCASE</p>
-			</div>
-			<div class="date">
-				<p>24 DE MAYO</p>
-			</div>
-			<div class="card_btn">
-				<a href="#">Mas Informacion</a>
-			</div>
-		</div>
+		</section>
+
+		<footer>
+			<section class="footer">
+				<div class="section_container footer_container">
+					<a href="#" id="logo_footer" class="logo"
+						><h4>GAMERTECA</h4></a
+					>
+					<div>
+						<p>
+							Pagina destinada a la informacion, difusion y
+							entretenimiento sobre videojuegos.
+						</p>
+					</div>
+					<div class="footer_socials">
+						<span>
+							<a href="https://www.facebook.com/GamertecaGTC/"
+								><i class="ri-facebook-fill"></i>Facebook</a
+							>
+						</span>
+						<span>
+							<a
+								href="https://www.instagram.com/elgamer_inexperto/?hl=en"
+								><i class="ri-instagram-fill"></i>Instagram</a
+							>
+						</span>
+						<span>
+							<a href="https://twitter.com/gamerteca?lang=en"
+								><i class="ri-twitter-fill"></i>Twitter</a
+							>
+						</span>
+					</div>
+				</div>
+				<div class="footer_bar">
+					<a href="https://github.com/MadManJohnSmith/ProyectoHW"
+						><p>
+							BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
+							<br />
+							FACULTAD DE CIENCIAS DE LA COMPUTACION
+							<br />
+							2024
+						</p></a
+					>
+				</div>
+			</section>
+		</footer>
 	</body>
 </html>
