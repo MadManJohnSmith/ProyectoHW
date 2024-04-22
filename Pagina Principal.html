@@ -7,7 +7,14 @@
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
-
+			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+			.logo{
+				font-size: 1.3rem;
+				font-weight: 400;
+				color: var(--white);
+				font-family: "Press Start 2P", system-ui;
+				font-style: normal;
+			}
 			.nav_bar {
 				display: flex;
 				justify-content: space-between;
@@ -18,17 +25,14 @@
 				gap: 2rem;
 			}
 
-			.nav_logo a {
-				font-size: 1.2rem;
-				font-weight: 600;
-				color: var(--white);
-			}
+			
 
 			.nav_links {
 				display: flex;
 				list-style: none;
 				align-items: center;
 				gap: 2rem;
+				font-size: 1rem;
 			}
 
 			.link a {
@@ -63,6 +67,7 @@
 			}
 			a {
 				text-decoration: none;
+				color: var(--white);
 			}
 
 			* {
@@ -147,6 +152,9 @@
 				text-align: center;
 				font-size: 0.8rem;
 				border-top: 1px solid var(--extra-light);
+			}
+			.footer_bar p {
+				color: var(--white);
 			}
 			.section_container {
 				max-width: var(--max-width);
@@ -254,10 +262,10 @@
 			}
 
 			.discover_image {
-				width: 300px; /* Set the width of the container */
-				height: 300px; /* Set the height of the container */
-				border: 2px solid black; /* Add a border to the container */
-				overflow: hidden; /* Hide anything that goes outside the container */
+				width: 300px;
+				height: 300px;
+				border: 2px solid black;
+				overflow: hidden;
 				border-radius: 30px;
 				display: flex;
 				justify-content: center;
@@ -265,9 +273,9 @@
 			}
 
 			.discover_image img {
-				width: 100%; /* Make the image take up the full width of the container */
-				height: auto; /* Keep the aspect ratio of the image */
-				object-fit: fill; /* Make the image cover the entire container, cropping if necessary */
+				width: 100%;
+				height: auto;
+				object-fit: fill;
 			}
 
 			.discover_image::after {
@@ -326,6 +334,15 @@
 
 			.blogs_card {
 				position: relative;
+			}
+			.blogs_card {
+				transition: transform 0.3s, opacity 0.3s, background-color 0.3s,
+					box-shadow 0.3s;
+			}
+
+			.blogs_card:hover {
+				transform: scale(1.1);
+				z-index: 1;
 			}
 
 			.blogs_content {
@@ -465,11 +482,11 @@
 			<nav>
 				<div class="nav_bar">
 					<div class="nav_logo">
-						<a href="Pagina Principal.html">GAMERTECA</a>
+						<a href="Pagina Principal.html" class="logo">GAMERTECA</a>
 					</div>
 					<ul class="nav_links">
 						<li class="link">
-							<a href="Nuevos Juegos.html" target="_self"
+							<a href="Lanzamientos.html" target="_self"
 								>Lanzamientos</a
 							>
 						</li>
@@ -509,7 +526,7 @@
 					</p>
 					<div class="about_flex">
 						<div class="about_card">
-							<h4>Locacion</h4>
+							<h4>Ubicación</h4>
 							<p>Centro de convenciones Las Vegas, Nevada</p>
 						</div>
 						<div class="about_card">
@@ -546,12 +563,15 @@
 						<div class="discover_card_content">
 							<h4>ACTUALIZACION</h4>
 							<p>
-								Una actualizion llega a CALL OF DUTY: WARZONE,
+								Una actualzación llega a CALL OF DUTY: WARZONE,
 								nuevo contenido se acerca, accion, nuevas armas,
 								lugares por descubrir, !LISTOS PARA LA BATALLA¡
 							</p>
 							<button class="discover_btn">
-								Leer Mas <i class="ri-arrow-right-line"></i>
+								<a
+									href="https://www.callofduty.com/mx/es/blog/2024/03/call-of-duty-modern-warfare-iii-warzone-wzm-season-3-maps-modes-zombies-announcement"
+									>Leer Mas <i class="ri-arrow-right-line"></i
+								></a>
 							</button>
 						</div>
 					</div>
@@ -570,7 +590,10 @@
 								nueva pista de las Vegas.
 							</p>
 							<button class="discover_btn">
-								Leer Mas <i class="ri-arrow-right-line"></i>
+								<a
+									href="https://www.ea.com/es-es/games/f1/f1-24"
+									>Leer Mas <i class="ri-arrow-right-line"></i
+								></a>
 							</button>
 						</div>
 					</div>
@@ -589,7 +612,10 @@
 								Comunidad
 							</p>
 							<button class="discover_btn">
-								Leer Mas <i class="ri-arrow-right-line"></i>
+								<a
+									href="https://www.minecraft.net/es-mx/about-minecraft"
+									>Leer Mas <i class="ri-arrow-right-line"></i
+								></a>
 							</button>
 						</div>
 					</div>
@@ -606,34 +632,44 @@
 				</p>
 				<div class="blogs_grid">
 					<div class="blogs_card">
-						<img
-							src="https://static-cdn.jtvnw.net/jtv_user_pictures/elfedelobo-profile_image-1d74acb6f0797ea1-300x300.png"
-							alt="blog"
-						/>
-						<div class="blogs_content"><p>FEDELOBO</p></div>
+						<a href="https://www.youtube.com/@elfedelobo"
+							><img
+								src="https://static-cdn.jtvnw.net/jtv_user_pictures/elfedelobo-profile_image-1d74acb6f0797ea1-300x300.png"
+								alt="blog"
+							/>
+							<div class="blogs_content"><p>FEDELOBO</p></div>
+						</a>
 					</div>
 					<div class="blogs_card">
-						<img
-							src="https://yt3.googleusercontent.com/pA8UkZ4BMFB--f7Kdk3Upj8v3NxFGn_BDdm1EX1aXC94FDB3-b4IKsGeQ4tq_0Xg5J7QMMALO5o=s900-c-k-c0x00ffffff-no-rj"
-							alt="blog"
-						/>
-						<div class="blogs_content"><p>AtomiK.O</p></div>
+						<a href="https://www.youtube.com/@AtomiKO"
+							><img
+								src="https://yt3.googleusercontent.com/pA8UkZ4BMFB--f7Kdk3Upj8v3NxFGn_BDdm1EX1aXC94FDB3-b4IKsGeQ4tq_0Xg5J7QMMALO5o=s900-c-k-c0x00ffffff-no-rj"
+								alt="blog"
+							/>
+							<div class="blogs_content"><p>AtomiK.O</p></div></a
+						>
 					</div>
 					<div class="blogs_card">
-						<img
-							src="https://static-cdn.jtvnw.net/jtv_user_pictures/92afa0c4-1237-492d-89a8-15f949f712c0-profile_image-300x300.png"
-							alt="blog"
-						/>
-						<div class="blogs_content"><p>PEPE EL MAGO</p></div>
+						<a href="https://www.youtube.com/@PepeElMago"
+							><img
+								src="https://static-cdn.jtvnw.net/jtv_user_pictures/92afa0c4-1237-492d-89a8-15f949f712c0-profile_image-300x300.png"
+								alt="blog"
+							/>
+							<div class="blogs_content">
+								<p>PEPE EL MAGO</p>
+							</div></a
+						>
 					</div>
 					<div class="blogs_card">
-						<img
-							src="https://i.pinimg.com/originals/e0/a6/3d/e0a63d638fa1605aacf88a83401b22bb.jpg"
-							alt="blog"
-						/>
-						<div class="blogs_content">
-							<p>EL ULTIMO CIRCULO</p>
-						</div>
+						<a href="https://www.youtube.com/@ElUltimoCirculo"
+							><img
+								src="https://i.pinimg.com/originals/e0/a6/3d/e0a63d638fa1605aacf88a83401b22bb.jpg"
+								alt="blog"
+							/>
+							<div class="blogs_content">
+								<p>EL ULTIMO CIRCULO</p>
+							</div></a
+						>
 					</div>
 				</div>
 			</div>
@@ -642,8 +678,7 @@
 		<footer>
 			<section class="footer">
 				<div class="section_container footer_container">
-					<h4>GAMERTECA</h4>
-
+					<a href="#" id="logo_footer" class="logo"><h4>GAMERTECA</h4></a>
 					<div>
 						<p>
 							Pagina destinada a la informacion, difusion y
@@ -670,13 +705,15 @@
 					</div>
 				</div>
 				<div class="footer_bar">
-					<p>
-						BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
-						<br />
-						FACULTAD DE CIENCIAS DE LA COMPUTACION
-						<br />
-						2024
-					</p>
+					<a href="https://github.com/MadManJohnSmith/ProyectoHW"
+						><p>
+							BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
+							<br />
+							FACULTAD DE CIENCIAS DE LA COMPUTACION
+							<br />
+							2024
+						</p></a
+					>
 				</div>
 			</section>
 		</footer>

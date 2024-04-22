@@ -1,231 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Proximos Lanzamientos </title>
-    <style>
-        *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<title>Proximos Lanzamientos</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+		/>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+			.logo {
+				font-size: 1.3rem;
+				font-weight: 400;
+				color: var(--white);
+				font-family: "Press Start 2P", system-ui;
+				font-style: normal;
+			}
+			.material-symbols-outlined {
+				font-variation-settings: "NONE" 0, "wght" 4000, "GRAD" 0,
+					"opsz" 24;
+			}
 
-body{
-    background: #eaeaea;
-    overflow: hidden;
-}
+			.nav_bar {
+				display: flex;
+				justify-content: space-between;
+				max-width: var(--max-width);
+				margin: auto;
+				padding: 1.2rem 1rem;
+				align-items: center;
+				gap: 2rem;
+			}
 
-.container{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1000px;
-    height: 600px;
-    background: #f5f5f5;
-    box-shadow: 0 30px 50px #dbdbdb;
-}
+			.nav_logo a {
+				font-size: 1.3rem;
+				font-weight: 400;
+				color: var(--white);
+				font-family: "Press Start 2P", system-ui;
+				font-style: normal;
+			}
 
-.container .slide .item{
-    width: 200px;
-    height: 300px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    border-radius: 20px;
-    box-shadow: 0 30px 50px #505050;
-    background-position: 50% 50%;
-    background-size: cover;
-    display: inline-block;
-    transition: 0.5s;
-}
+			.nav_links {
+				font-size: 1rem;
+				display: flex;
+				list-style: none;
+				align-items: center;
+				gap: 2rem;
+			}
 
-.slide .item:nth-child(1),
-.slide .item:nth-child(2){
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-}
+			.link a {
+				padding: 1.3rem 5px;
+				font-weight: 500;
+				color: var(--white);
+				transition: 0.3s;
+			}
 
+			.link a:hover {
+				color: var(--secondary-color);
+				border-bottom: 2px solid var(--secondary-color);
+			}
 
-.slide .item:nth-child(3){
-    left: 50%;
-}
-.slide .item:nth-child(4){
-    left: calc(50% + 220px);
-}
-.slide .item:nth-child(5){
-    left: calc(50% + 440px);
-}
+			.link span {
+				padding: 1rem 0;
+				color: var(--white);
+				cursor: pointer;
+			}
+			:root {
+				--primary-color: #0a0d14;
+				--primary-color-light: #20242f;
+				--secondary-color: #f49e09;
+				--extra-light: rgba(255, 255, 255, 0.5);
+				--white: #ffffff;
+				--max-width: 1200px;
+				--header-font: "Lisu Bosa", serif;
+			}
+			img {
+				width: 100%;
+				display: flex;
+			}
+			a {
+				text-decoration: none;
+				color: var(--white);
+			}
 
-/* here n = 0, 1, 2, 3,... */
-.slide .item:nth-child(n + 6){
-    left: calc(50% + 660px);
-    opacity: 0;
-}
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			nav {
+				display: block;
+				unicode-bidi: isolate;
+				background-color: rgba(0, 0, 0, 0.5);
+				border-bottom: 1px solid var(--extra-light);
+				position: relative;
+				z-index: 1000;
+			}
+			body {
+				font-family: "Poppins", sans-serif;
+				color: var(--white);
+				background-color: var(--primary-color);
+			}
+			footer .section_container {
+				margin-top: 19.5rem;
+				padding-top: 20rem;
+				margin-bottom: 0;
+				padding-bottom: 0rem;
+				z-index: 0;
+			}
+			.footer_container {
+				text-align: center;
+			}
 
+			.footer_container h4 {
+				margin-bottom: 1rem;
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
 
+			.footer_socials {
+				margin-bottom: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+			}
 
-.item .content{
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    width: 300px;
-    text-align: left;
-    color: #eee;
-    transform: translate(0, -50%);
-    font-family: system-ui;
-    display: none;
-}
+			.footer_socials span a {
+				font-size: 1rem;
+				color: var(--white);
+				cursor: pointer;
+				transition: 0.3s;
+				text-decoration: none;
+			}
 
+			.footer_socials span a:hover {
+				color: var(--secondary-color);
+			}
 
-.slide .item:nth-child(2) .content{
-    display: block;
-}
+			.footer_container p {
+				max-width: 600px;
+				margin: auto;
+				margin-bottom: 2rem;
+			}
 
+			.footer_nav {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 2rem;
+			}
 
-.content .name{
-    font-size: 40px;
-    text-transform: uppercase;
-    font-weight: bold;
-    opacity: 0;
-    animation: animate 1s ease-in-out 1 forwards;
-}
+			.footer_link a {
+				font-weight: 500;
+				color: var(--white);
+				text-decoration: none;
+			}
 
-.content .des{
-    margin-top: 10px;
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.3s 1 forwards;
-}
+			.footer_link a:hover {
+				color: var(--secondary-color);
+			}
 
-.content button{
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0;
-    animation: animate 1s ease-in-out 0.6s 1 forwards;
-}
+			.footer_bar {
+				padding: 1rem;
+				text-align: center;
+				font-size: 0.8rem;
+				border-top: 1px solid var(--extra-light);
+			}
+			.footer_bar p {
+				color: var(--white);
+			}
+			.container {
+				margin-top: 4.2rem;
+				flex: auto;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
 
+			.container .slide .item {
+				width: 12rem;
+				height: 20rem;
+				position: absolute;
+				top: 50%;
+				transform: translate(0, -50%);
+				border-radius: 20px;
+				background-position: 50% 50%;
+				background-size: cover;
+				display: inline-block;
+				transition: 0.5s;
+			}
+			.slide .item:nth-child(1),
+			.slide .item:nth-child(2) {
+				top: 0;
+				left: 0;
+				transform: translate(0, 0);
+				border-radius: 0;
+				width: 99vw;
+				height: 100%;
+			}
 
-@keyframes animate {
-    from{
-        opacity: 0;
-        transform: translate(0, 100px);
-        filter: blur(33px);
-    }
+			.slide .item:nth-child(3) {
+				left: 50%;
+			}
+			.slide .item:nth-child(4) {
+				left: calc(50% + 220px);
+			}
+			.slide .item:nth-child(5) {
+				left: calc(50% + 440px);
+			}
+			.slide .item:nth-child(n + 6) {
+				left: calc(50% + 660px);
+				opacity: 0;
+			}
 
-    to{
-        opacity: 1;
-        transform: translate(0);
-        filter: blur(0);
-    }
-}
+			.item .content {
+				position: absolute;
+				top: 50%;
+				left: 100px;
+				width: 100%;
+				text-align: left;
+				color: #eee;
+				transform: translate(0, -50%);
+				font-family: system-ui;
+				display: none;
+				flex: auto;
+			}
+			.item .content p {
+				max-width: 30rem;
+				color: white;
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black,
+					0 -1px rgb(77, 77, 77);
+			}
 
+			.slide .item:nth-child(2) .content {
+				display: block;
+			}
 
+			.content .name {
+				font-size: 2.3rem;
+				text-transform: uppercase;
+				font-weight: bold;
+				opacity: 0;
+				animation: animate 1s ease-in-out 1 forwards;
+			}
 
-.button{
-    width: 100%;
-    text-align: center;
-    position: absolute;
-    bottom: 20px;
-}
+			.content .des {
+				margin-top: 10px;
+				margin-bottom: 20px;
+				opacity: 0;
+				animation: animate 1s ease-in-out 0.3s 1 forwards;
+			}
 
-.button button{
-    width: 40px;
-    height: 35px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 0 5px;
-    border: 1px solid #000;
-    transition: 0.3s;
-}
+			@keyframes animate {
+				from {
+					opacity: 0;
+					transform: translate(0, 100px);
+					filter: blur(33px);
+				}
 
-.button button:hover{
-    background: #ababab;
-    color: #fff;
-}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="slide">
+				to {
+					opacity: 1;
+					transform: translate(0);
+					filter: blur(0);
+				}
+			}
 
-            <div class="item" style="background-image: url(https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2020/08/hipertextual-activision-revela-futuro-call-of-duty-warzone-tras-superar-75-millones-jugadores-2020840148.jpg?fit=2500%2C1406&quality=50&strip=all&ssl=1);">
-                <div class="content">
-                    <div class="name">Warzone Mobile</div>
-                    <div class="des">Desarrollado por Activision, traslada los tiroteos, las habilidades y los vehículos, con contenido clásico en forma de operadores, armas y mapas y una experiencia de juego única pensada para pantallas táctiles con hasta 120 jugadores en una partida en móvil.</div>
-                    <button <a href="https://www.youtube.com/watch?v=YJhyRvnjEhg" target="_blank"> Ver Trailer</a>Trailer</button>
-                    
-                </div>
-            </div>
-        
-    
-    
-            <div class="item" style="background-image: url(https://images2.alphacoders.com/237/237412.jpg);">
-                <div class="content">
-                    <div class="name">Alone in the Dark</div>
-                    <div class="des">El terror psicológico se une al gótico sureño en esta reinvención del clásico juego de supervivencia
-                         Alone in the Dark. Este homenaje al juego original te permite vivir una inquietante historia a través de los ojos de 
-                         uno de los dos protagonistas. Juega como Edward Carnby o como Emily Hartwood y explora tu entorno, lucha contra monstruos,
-                          resuelve puzles y descubre la sórdida verdad de la mansión Derceto…</div>
-                    <button>Ver Trailer</button>
-                </div>
-            </div>
-        
-    
-            <div class="item" style="background-image: url(https://locosxlosjuegos.com/wp-content/uploads/2024/03/ronin.jpg);">
-                <div class="content">
-                    <div class="name">Rise of the Ronin</div>
-                    <div class="des">Rise of the Ronin es un videojuego de acción y rol en mundo abierto exclusivo de PlayStation 5 
-                        desarrollado por Team NINJA que se enfoca en el combate y en la historia épica de un samurai del Japón del siglo
-                         XIX que buscará forjar su propio nombre y que acabará decidiendo el destino del país nipón.</div>
-                    <button>Ver Trailer</button>
-                </div>
-            </div>
-        
-    
-            <div class="item" style="background-image: url(https://media.vandal.net/m/6-2023/202361511232249_1.jpg);">
-                <div class="content">
-                    <div class="name">Metroid Prime 4</div>
-                    <div class="des">Metroid Prime 4, la cuarta entrega de la saga Prime protagonizada por Samus Aran que salió en
-                         GameCube, Wii y Wii U a lo largo de los años, llegará a Nintendo Switch, desarrollada por Retro Studios. 
-                         Se trata de un nuevo juego de acción y exploración en primera persona, en el que la protagonista tendrá que 
-                         ir descubriendo los secretos de un buen número de planetas y alienígenas.</div>
-                    <button>Ver Trailer</button>
-                </div>
-            </div>
-        </div>
-        
-        <div class="button">
-            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
-            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
-        </div>
+			.button {
+				width: 100%;
+				text-align: center;
+				position: absolute;
+				bottom: 20px;
+			}
+			.btn {
+				background-color: #000000;
+				color: rgb(32, 33, 36);
+				padding: 15px 32px;
+				text-align: center;
+				display: inline-block;
+				font-size: 16px;
+				margin: 4px 2px;
+				border: none;
+				border-radius: 8px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+				transition: all 0.3s ease;
+				overflow: hidden;
+			}
+			.btn p {
+				font-weight: bold;
+				color: black;
+			}
 
-    </div> 
+			@media (width < 700px) {
+				.nav_bar {
+					flex-direction: column;
+					align-items: center;
+					padding: 0.5rem;
+				}
+				.nav_bar a {
+					padding: 0.25rem 0.5rem;
+				}
+				.container {
+					margin-top: 6.4rem;
+				}
+				.slide .item:nth-child(3) {
+					left: 50%;
+					height: 5rem;
+					width: 5rem;
+					transform: translate(-20%, 180%);
+				}
+				.slide .item:nth-child(4) {
+					left: 50%;
+					height: 5rem;
+					width: 5rem;
+					transform: translate(100%, 180%);
+				}
+				.item .content p {
+					max-width: 20rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="nav_bar">
+					<div class="nav_logo">
+						<a href="Pagina Principal.html" class="logo"
+							>GAMERTECA</a
+						>
+					</div>
+					<ul class="nav_links">
+						<li class="link">
+							<a href="Eventos.html" target="_self">Eventos</a>
+						</li>
+						<li class="link">
+							<a href="Historia.html" target="_self">Historia</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<div class="container">
+			<div class="slide">
+				<div
+					class="item"
+					style="
+						background-image: url(https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2020/08/hipertextual-activision-revela-futuro-call-of-duty-warzone-tras-superar-75-millones-jugadores-2020840148.jpg?fit=2500%2C1406&quality=50&strip=all&ssl=1);
+					"
+				>
+					<div class="content">
+						<div class="name">Warzone Mobile</div>
+						<div class="des">
+							<p>
+								Desarrollado por Activision, traslada los
+								tiroteos, las habilidades y los vehículos, con
+								contenido clásico en forma de operadores, armas
+								y mapas y una experiencia de juego única pensada
+								para pantallas táctiles con hasta 120 jugadores
+								en una partida en móvil.
+							</p>
+						</div>
+						<a
+							href="https://www.youtube.com/watch?v=YJhyRvnjEhg"
+							target="_blank"
+						>
+							<button class="btn"><p>Ver Trailer</p></button>
+						</a>
+					</div>
+				</div>
 
-    <script>
-        let next = document.querySelector('.next')
-        let prev = document.querySelector('.prev')
-        
-        next.addEventListener('click', function(){
-            let items = document.querySelectorAll('.item')
-            document.querySelector('.slide').appendChild(items[0])
-        })
-        
-        prev.addEventListener('click', function(){
-            let items = document.querySelectorAll('.item')
-            document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
-        })
-        </script>
-</body>
+				<div
+					class="item"
+					style="
+						background-image: url(https://images2.alphacoders.com/237/237412.jpg);
+					"
+				>
+					<div class="content">
+						<div class="name">Alone in the Dark</div>
+						<div class="des">
+							<p>
+								El terror psicológico se une al gótico sureño en
+								esta reinvención del clásico juego de
+								supervivencia Alone in the Dark. Este homenaje
+								al juego original te permite vivir una
+								inquietante historia a través de los ojos de uno
+								de los dos protagonistas. Juega como Edward
+								Carnby o como Emily Hartwood y explora tu
+								entorno, lucha contra monstruos, resuelve puzles
+								y descubre la sórdida verdad de la mansión
+								Derceto…
+							</p>
+						</div>
+						<a
+							href="https://www.youtube.com/watch?v=ddsa1IB9MH4"
+							target="_blank"
+						>
+							<button class="btn"><p>Ver Trailer</p></button>
+						</a>
+					</div>
+				</div>
+
+				<div
+					class="item"
+					style="
+						background-image: url(https://locosxlosjuegos.com/wp-content/uploads/2024/03/ronin.jpg);
+					"
+				>
+					<div class="content">
+						<div class="name">Rise of the Ronin</div>
+						<div class="des">
+							<p>
+								Rise of the Ronin es un videojuego de acción y
+								rol en mundo abierto exclusivo de PlayStation 5
+								desarrollado por Team NINJA que se enfoca en el
+								combate y en la historia épica de un samurai del
+								Japón del siglo XIX que buscará forjar su propio
+								nombre y que acabará decidiendo el destino del
+								país nipón.
+							</p>
+						</div>
+						<a
+							href="https://www.youtube.com/watch?v=34FMSgdzzvI"
+							target="_blank"
+						>
+							<button class="btn"><p>Ver Trailer</p></button>
+						</a>
+					</div>
+				</div>
+
+				<div
+					class="item"
+					style="
+						background-image: url(https://media.vandal.net/m/6-2023/202361511232249_1.jpg);
+					"
+				>
+					<div class="content">
+						<div class="name">Metroid Prime 4</div>
+						<div class="des">
+							<p>
+								Metroid Prime 4, la cuarta entrega de la saga
+								Prime protagonizada por Samus Aran que salió en
+								GameCube, Wii y Wii U a lo largo de los años,
+								llegará a Nintendo Switch, desarrollada por
+								Retro Studios. Se trata de un nuevo juego de
+								acción y exploración en primera persona, en el
+								que la protagonista tendrá que ir descubriendo
+								los secretos de un buen número de planetas y
+								alienígenas.
+							</p>
+						</div>
+						<a
+							href="https://www.youtube.com/watch?v=nFbDmTjS_MI"
+							target="_blank"
+						>
+							<button class="btn"><p>Ver Trailer</p></button>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="button">
+				<button class="prev">
+					<span class="material-symbols-outlined">
+						chevron_left
+					</span>
+				</button>
+				<button class="next">
+					<span class="material-symbols-outlined">
+						chevron_right
+					</span>
+				</button>
+			</div>
+		</div>
+		<footer>
+			<section class="footer">
+				<div class="section_container footer_container">
+					<a href="#" id="logo_footer" class="logo"
+						><h4>GAMERTECA</h4></a
+					>
+					<div>
+						<p>
+							Pagina destinada a la informacion, difusion y
+							entretenimiento sobre videojuegos.
+						</p>
+					</div>
+					<div class="footer_socials">
+						<span>
+							<a href="https://www.facebook.com/GamertecaGTC/"
+								><i class="ri-facebook-fill"></i>Facebook</a
+							>
+						</span>
+						<span>
+							<a
+								href="https://www.instagram.com/elgamer_inexperto/?hl=en"
+								><i class="ri-instagram-fill"></i>Instagram</a
+							>
+						</span>
+						<span>
+							<a href="https://twitter.com/gamerteca?lang=en"
+								><i class="ri-twitter-fill"></i>Twitter</a
+							>
+						</span>
+					</div>
+				</div>
+				<div class="footer_bar">
+					<a href="https://github.com/MadManJohnSmith/ProyectoHW"
+						><p>
+							BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
+							<br />
+							FACULTAD DE CIENCIAS DE LA COMPUTACION
+							<br />
+							2024
+						</p></a
+					>
+				</div>
+			</section>
+		</footer>
+
+		<script>
+			let next = document.querySelector(".next");
+			let prev = document.querySelector(".prev");
+
+			next.addEventListener("click", function () {
+				let items = document.querySelectorAll(".item");
+				document.querySelector(".slide").appendChild(items[0]);
+			});
+			let autoSlide = setInterval(function () {
+				let items = document.querySelectorAll(".item");
+				document.querySelector(".slide").appendChild(items[0]);
+			}, 10000);
+
+			prev.addEventListener("click", function () {
+				let items = document.querySelectorAll(".item");
+				document
+					.querySelector(".slide")
+					.prepend(items[items.length - 1]); // here the length of items = 6
+			});
+		</script>
+	</body>
 </html>
