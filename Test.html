@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Historia</title>
-	<style>
-		@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
 			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-			.logo {
+			.logo{
 				font-size: 1.3rem;
 				font-weight: 400;
 				color: var(--white);
@@ -24,20 +25,12 @@
 				gap: 2rem;
 			}
 
-			.nav_logo a {
-				font-size: 1.3rem;
-				font-weight: 400;
-				color: var(--white);
-				font-family: "Press Start 2P", system-ui;
-				font-style: normal;
-			}
-
 			.nav_links {
-				font-size: 1rem;
 				display: flex;
 				list-style: none;
 				align-items: center;
 				gap: 2rem;
+				font-size: 1rem;
 			}
 
 			.link a {
@@ -94,10 +87,8 @@
 				background-color: var(--primary-color);
 			}
 			footer .section_container {
-
 				margin-bottom: 0;
 				padding-bottom: 0rem;
-				z-index: 0;
 			}
 			.footer_container {
 				text-align: center;
@@ -172,77 +163,154 @@
 				.nav_bar a {
 					padding: 0.25rem 0.5rem;
 				}
+				.header_container {
+					text-align: center;
+				}
+
+				.header_container h4 {
+					margin-left: 0;
+				}
 			}
-	</style>
-</head>
-<body>
-	<header>
-		<nav>
-			<div class="nav_bar">
-				<div class="nav_logo">
-					<a href="Pagina Principal.html" class="logo"
-						>GAMERTECA</a
+		</style>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="nav_bar">
+					<div class="nav_logo">
+						<a href="Pagina Principal.html" class="logo">GAMERTECA</a>
+					</div>
+					<ul class="nav_links">
+						<li class="link">
+							<a href="Lanzamientos.html" target="_self"
+								>Lanzamientos</a
+							>
+						</li>
+						<li class="link">
+							<a href="Eventos.html" target="_self">Eventos</a>
+						</li>
+						<li class="link">
+							<a href="Historia.html" target="_self">Historia</a>
+						</li>
+						<li>
+							<a href="InicioSesion.html" target="_self">Iniciar Sesión</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+
+		<footer>
+			<section class="footer">
+				<div class="section_container footer_container">
+					<a href="#" id="logo_footer" class="logo"><h4>GAMERTECA</h4></a>
+					<div>
+						<p>
+							Pagina destinada a la informacion, difusion y
+							entretenimiento sobre videojuegos.
+						</p>
+					</div>
+					<div class="footer_socials">
+						<span>
+							<a href="Comentarios.html"
+								><i class="Comentarios"></i>Comentarios</a
+							>
+						</span>
+						<span>
+							<a href="https://www.facebook.com/GamertecaGTC/"
+								><i class="ri-facebook-fill"></i>Facebook</a
+							>
+						</span>
+						<span>
+							<a
+								href="https://www.instagram.com/elgamer_inexperto/?hl=en"
+								><i class="ri-instagram-fill"></i>Instagram</a
+							>
+						</span>
+						<span>
+							<a href="https://twitter.com/gamerteca?lang=en"
+								><i class="ri-twitter-fill"></i>Twitter</a
+							>
+						</span>
+					</div>
+				</div>
+				<div class="footer_bar">
+					<a href="https://github.com/MadManJohnSmith/ProyectoHW"
+						><p>
+							BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
+							<br />
+							FACULTAD DE CIENCIAS DE LA COMPUTACION
+							<br />
+							2024
+						</p></a
 					>
 				</div>
-				<ul class="nav_links">
-					<li class="link">
-						<a href="Lanzamientos.html" target="_self"
-							>Lanzamientos</a
-						>
-					</li>
-					<li class="link">
-						<a href="Eventos.html" target="_self">Eventos</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-	</header>
+			</section>
+		</footer>
+		<script>
+			const scrollRevealOption = {
+				distance: "50px",
+				origin: "bottom",
+				duration: 1000,
+			};
 
-	
+			// header container
+			ScrollReveal().reveal(".header_container h1", scrollRevealOption);
 
-	<footer>
-		<section class="footer">
-			<div class="section_container footer_container">
-				<a href="#" id="logo_footer" class="logo"
-					><h4>GAMERTECA</h4></a
-				>
-				<div>
-					<p>
-						Pagina destinada a la informacion, difusion y
-						entretenimiento sobre videojuegos.
-					</p>
-				</div>
-				<div class="footer_socials">
-					<span>
-						<a href="https://www.facebook.com/GamertecaGTC/"
-							><i class="ri-facebook-fill"></i>Facebook</a
-						>
-					</span>
-					<span>
-						<a
-							href="https://www.instagram.com/elgamer_inexperto/?hl=en"
-							><i class="ri-instagram-fill"></i>Instagram</a
-						>
-					</span>
-					<span>
-						<a href="https://twitter.com/gamerteca?lang=en"
-							><i class="ri-twitter-fill"></i>Twitter</a
-						>
-					</span>
-				</div>
-			</div>
-			<div class="footer_bar">
-				<a href="https://github.com/MadManJohnSmith/ProyectoHW"
-					><p>
-						BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
-						<br />
-						FACULTAD DE CIENCIAS DE LA COMPUTACION
-						<br />
-						2024
-					</p></a
-				>
-			</div>
-		</section>
-	</footer>	
-</body>
+			ScrollReveal().reveal(".header_container h4", {
+				...scrollRevealOption,
+				delay: 100,
+			});
+
+			ScrollReveal().reveal(".header_container .btn", {
+				...scrollRevealOption,
+				delay: 100,
+			});
+
+			// about container
+			ScrollReveal().reveal(
+				".about_container .section_header",
+				scrollRevealOption
+			);
+			ScrollReveal().reveal(".about_container .section_subheader", {
+				...scrollRevealOption,
+				delay: 100,
+			});
+
+			ScrollReveal().reveal(".about_container .about_flex", {
+				...scrollRevealOption,
+				delay: 100,
+			});
+
+			ScrollReveal().reveal(".about_container .btn", {
+				...scrollRevealOption,
+				delay: 100,
+			});
+
+			// discover container
+			ScrollReveal().reveal(".discover_card", {
+				...scrollRevealOption,
+				interval: 100,
+			});
+
+			ScrollReveal().reveal(".discover_card_content", {
+				...scrollRevealOption,
+				interval: 200,
+				delay: 100,
+			});
+
+			// blogs container
+			ScrollReveal().reveal(".blogs_card", {
+				duration: 500,
+				interval: 200,
+			});
+
+			// journals container
+			ScrollReveal().reveal(".journals_card", {
+				...scrollRevealOption,
+				interval: 100,
+			});
+		</script>
+	</body>
 </html>
