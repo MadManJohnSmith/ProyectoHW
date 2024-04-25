@@ -8,7 +8,7 @@
 		<style>
 			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
 			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-			.logo{
+			.logo {
 				font-size: 1.3rem;
 				font-weight: 400;
 				color: var(--white);
@@ -89,6 +89,7 @@
 			footer .section_container {
 				margin-bottom: 0;
 				padding-bottom: 0rem;
+				margin-top: 1rem;
 			}
 			.footer_container {
 				text-align: center;
@@ -154,6 +155,54 @@
 			.footer_bar p {
 				color: var(--white);
 			}
+			.comments {
+				padding: 2rem;
+				background-color: var(--primary-color-light);
+			}
+
+			.comments_container {
+				display: flex;
+				gap: 2rem;
+			}
+
+			.comments_panel {
+				flex: 1;
+			}
+
+			.comments_list {
+				flex: 2;
+				overflow-y: auto;
+				max-height: 400px;
+			}
+
+			.comment {
+				position: relative;
+				padding: 1rem;
+				margin-bottom: 1rem;
+				border-radius: 10px;
+				background-color: rgba(255, 255, 255, 0.1);
+				overflow: hidden;
+			}
+
+			.comment .comment_delete {
+				position: absolute;
+				top: 0;
+				right: 0;
+				padding: 0.5rem;
+				color: red;
+				cursor: pointer;
+			}
+			.username {
+				font-weight: 600;
+			}
+			.comment_date {
+				font-size: 0.8rem;
+				color: var(--extra-light);
+			}
+			.actual_comment {
+				margin-top: 1rem;
+			}
+
 			@media (width < 700px) {
 				.nav_bar {
 					flex-direction: column;
@@ -173,12 +222,29 @@
 			}
 		</style>
 	</head>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API = Tawk_API || {},
+			Tawk_LoadStart = new Date();
+		(function () {
+			var s1 = document.createElement("script"),
+				s0 = document.getElementsByTagName("script")[0];
+			s1.async = true;
+			s1.src = "https://embed.tawk.to/6629d1a51ec1082f04e694e8/1hs9lls03";
+			s1.charset = "UTF-8";
+			s1.setAttribute("crossorigin", "*");
+			s0.parentNode.insertBefore(s1, s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
 	<body>
 		<header>
 			<nav>
 				<div class="nav_bar">
 					<div class="nav_logo">
-						<a href="Pagina Principal.html" class="logo">GAMERTECA</a>
+						<a href="Pagina Principal.html" class="logo"
+							>GAMERTECA</a
+						>
 					</div>
 					<ul class="nav_links">
 						<li class="link">
@@ -193,18 +259,61 @@
 							<a href="Historia.html" target="_self">Historia</a>
 						</li>
 						<li>
-							<a href="InicioSesion.html" target="_self">Iniciar Sesión</a>
+							<a href="InicioSesion.html" target="_self"
+								>Iniciar Sesión</a
+							>
 						</li>
 					</ul>
 				</div>
 			</nav>
 		</header>
 
+		<section class="comments">
+			<div class="comments_container">
+				<div class="comments_panel">
+					<form id="commentForm">
+						<input
+							type="text"
+							id="commentName"
+							placeholder="Nombre"
+							required
+						/>
+						<textarea
+							id="commentContent"
+							placeholder="Escribe tu comentario aquí"
+							required
+						></textarea>
+						<button type="submit">Enviar</button>
+					</form>
+				</div>
+				<div class="comments_list">
+					<div class="comment">
+						<div class="comment_content">
+							<div class="username">
+								<p>Sistema</p>
+							</div>
+							<div class="comment_date">
+								<p>Octubre 18 2023</p>
+							</div>
+							<div class="actual_comment">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur
+									adipiscing elit.
+								</p>
+							</div>
+						</div>
+						<span class="comment_delete">Eliminar</span>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<footer>
 			<section class="footer">
 				<div class="section_container footer_container">
-					<a href="#" id="logo_footer" class="logo"><h4>GAMERTECA</h4></a>
+					<a href="#" id="logo_footer" class="logo"
+						><h4>GAMERTECA</h4></a
+					>
 					<div>
 						<p>
 							Pagina destinada a la informacion, difusion y
@@ -310,6 +419,69 @@
 			ScrollReveal().reveal(".journals_card", {
 				...scrollRevealOption,
 				interval: 100,
+			});
+			document.addEventListener("DOMContentLoaded", function () {
+				const commentForm = document.getElementById("commentForm");
+				const commentList = document.querySelector(".comments_list");
+
+				function addComment(name, content) {
+					const currentDate = new Date(); // Obtener la fecha actual
+					const options = {
+						month: "long",
+						day: "numeric",
+						year: "numeric",
+					};
+					const dateString = currentDate.toLocaleDateString(
+						"es-ES",
+						options
+					); // Convertir la fecha a una cadena en el formato deseado
+
+					const comment = document.createElement("div");
+					comment.classList.add("comment");
+					comment.style.backgroundColor = getRandomColor(); // Asignar color aleatorio
+					comment.innerHTML = `<div class="username"><p>${name}</p></div><div class="comment_date"><p>${dateString}</p></div><div class="actual_comment"><p>${content}</p></div><span class="comment_delete">Eliminar</span>`;
+					if (commentList.firstChild) {
+						commentList.insertBefore(
+							comment,
+							commentList.firstChild
+						); // Insertar al principio de la lista
+					} else {
+						commentList.appendChild(comment); // Si la lista está vacía, simplemente agregar el comentario
+					}
+				}
+
+				// Función para eliminar un comentario
+				function deleteComment(comment) {
+					comment.remove();
+				}
+
+				// Generar color aleatorio con opacidad
+				function getRandomColor() {
+					const letters = "0123456789ABCDEF";
+					let color = "#";
+					for (let i = 0; i < 6; i++) {
+						color += letters[Math.floor(Math.random() * 16)];
+					}
+					return color + "80"; // Agregar opacidad
+				}
+
+				// Evento para enviar el formulario de comentario
+				commentForm.addEventListener("submit", function (event) {
+					event.preventDefault();
+					const name = document.getElementById("commentName").value;
+					const content =
+						document.getElementById("commentContent").value;
+					addComment(name, content);
+					commentForm.reset(); // Limpiar formulario
+				});
+
+				// Evento para eliminar comentario al hacer clic en "Eliminar"
+				commentList.addEventListener("click", function (event) {
+					if (event.target.classList.contains("comment_delete")) {
+						const comment = event.target.parentElement;
+						deleteComment(comment);
+					}
+				});
 			});
 		</script>
 	</body>
