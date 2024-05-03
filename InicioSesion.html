@@ -407,7 +407,11 @@
 
 								<a href="" class="crear_cuenta">Crear cuenta</a>
 							</div>
-							<button type="submit" class="button">
+							<button
+								type="submit"
+								class="button"
+								id="btnIniciarSesion"
+							>
 								Iniciar Sesión
 							</button>
 						</form>
@@ -499,7 +503,6 @@
 				iniciarSesionTab.querySelector("a").style.color = "#5d9cec";
 				crearCuentaTab.querySelector("a").style.color = "";
 			});
-
 			// Obtenemos el botón de iniciar sesión
 			const btnIniciarSesion = document.querySelector(".button");
 
@@ -508,14 +511,24 @@
 				// Prevenir el comportamiento por defecto del botón (enviar el formulario)
 				event.preventDefault();
 
-				// Obtenemos el valor del campo de nombre de usuario
+				// Obtenemos los valores de los campos de entrada
 				const nombreUsuario =
 					document.querySelector(".form_input").value;
-
-				// Mostramos el alert con el mensaje "Bienvenido <nombre de usuario>"
-				alert("Bienvenido " + nombreUsuario);
-				window.location.href = "Pagina Principal.html";
+				const contraseña =
+					document.querySelectorAll(".form_input")[1].value; // Segundo campo de entrada
+				// Verificamos si alguno de los campos está vacío
+				if (nombreUsuario.trim() === "" || contraseña.trim() === "") {
+					// Si algún campo está vacío, mostramos un mensaje de error
+					alert(
+						"Por favor completa todos los campos antes de iniciar sesión."
+					);
+				} else {
+					// Si todos los campos están completos, mostramos el alert de bienvenida y redirigimos
+					alert("Bienvenido " + nombreUsuario);
+					window.location.href = "Pagina Principal.html";
+				}
 			});
 		</script>
+		<script></script>
 	</body>
 </html>
