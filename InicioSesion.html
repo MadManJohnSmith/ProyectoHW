@@ -1,534 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-bs-theme="dark">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="mobile-web-app-capable" content="yes" />
-
-		<title>Inicio Sesión</title>
-
-		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
-			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-			.logo {
-				font-size: 1.3rem;
-				font-weight: 400;
-				color: var(--white);
-				font-family: "Press Start 2P", system-ui;
-				font-style: normal;
-			}
-			.nav_bar {
-				display: flex;
-				justify-content: space-between;
-				max-width: var(--max-width);
-				margin: auto;
-				padding: 1.2rem 1rem;
-				align-items: center;
-				gap: 2rem;
-			}
-
-			.nav_links {
-				display: flex;
-				list-style: none;
-				align-items: center;
-				gap: 2rem;
-				font-size: 1rem;
-			}
-
-			.link a {
-				padding: 1.3rem 5px;
-				font-weight: 500;
-				color: var(--white);
-				transition: 0.3s;
-			}
-
-			.link a:hover {
-				color: var(--secondary-color);
-				border-bottom: 2px solid var(--secondary-color);
-			}
-
-			.link span {
-				padding: 1rem 0;
-				color: var(--white);
-				cursor: pointer;
-			}
-			:root {
-				--primary-color: #0a0d14;
-				--primary-color-light: #20242f;
-				--secondary-color: #f49e09;
-				--extra-light: rgba(255, 255, 255, 0.5);
-				--white: #ffffff;
-				--max-width: 1200px;
-				--header-font: "Lisu Bosa", serif;
-			}
-			img {
-				width: 100%;
-				display: flex;
-			}
-			a {
-				text-decoration: none;
-				color: var(--white);
-			}
-
-			* {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			nav {
-				display: block;
-				unicode-bidi: isolate;
-				background-color: rgba(0, 0, 0, 0.5);
-				border-bottom: 1px solid var(--extra-light);
-				position: relative;
-				z-index: 1000;
-			}
-			body {
-				background-color: #000000;
-				color: #656565;
-				font-family: "Poppins", sans-serif;
-			}
-			footer .section_container {
-				margin-bottom: 0;
-				padding-bottom: 0rem;
-			}
-			.footer_container {
-				text-align: center;
-			}
-
-			.footer_container h4 {
-				margin-bottom: 1rem;
-				font-size: 1.5rem;
-				font-weight: 600;
-			}
-
-			.footer_socials {
-				margin-bottom: 2rem;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 2rem;
-			}
-
-			.footer_socials span a {
-				font-size: 1rem;
-				color: var(--white);
-				cursor: pointer;
-				transition: 0.3s;
-				text-decoration: none;
-			}
-
-			.footer_socials span a:hover {
-				color: var(--secondary-color);
-			}
-
-			.footer_container p {
-				max-width: 600px;
-				margin: auto;
-				margin-bottom: 2rem;
-			}
-
-			.footer_nav {
-				list-style: none;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-wrap: wrap;
-				gap: 2rem;
-			}
-
-			.footer_link a {
-				font-weight: 500;
-				color: var(--white);
-				text-decoration: none;
-			}
-
-			.footer_link a:hover {
-				color: var(--secondary-color);
-			}
-
-			.footer_bar {
-				padding: 1rem;
-				text-align: center;
-				font-size: 0.8rem;
-				border-top: 1px solid var(--extra-light);
-			}
-			.footer_bar p {
-				color: var(--white);
-			}
-
-			.center {
-				display: flex;
-				justify-content: center;
-				margin-bottom: 2rem;
-				margin-top: 2rem;
-			}
-
-			.content {
-				flex: 0 0 20.3rem;
-			}
-
-			.panel_header {
-				display: flex;
-				justify-content: center;
-				padding: 20px;
-				border-top-left-radius: 0.25rem;
-				border-top-right-radius: 1.25rem;
-				background-color: #3a3f51;
-			}
-
-			.panel_body {
-				padding: 20px;
-				border-bottom-right-radius: 1.25rem;
-				border-bottom-left-radius: 0.25rem;
-				background-color: #ffffff;
-			}
-
-			.InicioSesion {
-				padding: 0.5rem;
-				text-align: center;
-			}
-
-			.input_box {
-				margin: 20px 0;
-			}
-
-			.form_input {
-				box-sizing: border-box;
-				padding: 6px 16px;
-				width: 100%;
-				height: 2.2rem;
-				border: 1px solid #dde6e9;
-				border-radius: 0.25rem;
-				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-			}
-
-			.form_input:focus {
-				outline: 0;
-				border-color: #66afe9;
-				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
-					0 0 8px rgba(102, 175, 233, 0.6);
-			}
-
-			.button {
-				overflow: hidden;
-				margin-top: 20px;
-				padding: 10px 0;
-				width: 100%;
-				border: 1px solid;
-				border-color: #5899eb;
-				border-radius: 4px;
-				background-color: #5d9cec;
-				color: #ffffff;
-			}
-
-			.button:hover {
-				border-color: #3483e7;
-				background-color: #4b91ea;
-				color: #ffffff;
-				text-decoration: none;
-			}
-			.recordar_sesion {
-				display: flex;
-				justify-content: space-between;
-				line-height: 25px;
-			}
-
-			.recordar {
-				font-size: 13px;
-			}
-			.crear_cuenta {
-				margin-left: auto;
-				text-decoration: none;
-				font-size: 13px;
-				color: #748690;
-			}
-
-			.crear_cuenta:hover {
-				color: #5b6970;
-				text-decoration: underline;
-			}
-			.nav_bar_panel {
-				background-color: rgba(255, 255, 255, 0.5);
-			}
-			.nav_bar_panel ul {
-				border-bottom: 1px solid #c6c6c6;
-				list-style-type: none;
-				margin-left: 0;
-				padding-left: 0;
-				text-align: center;
-				text-transform: uppercase;
-			}
-
-			.nav_bar_panel li {
-				border: 1px solid transparent;
-				border-bottom: 0;
-				display: inline-block;
-				padding: 8px 16px;
-				position: relative;
-				top: 1px;
-				font-size: 14px;
-			}
-
-			.nav_bar_panel li.activo {
-				background-color: #ffffff;
-				border-color: #e7e7e8;
-			}
-
-			.nav_bar_panel li.activo a {
-				color: #000;
-			}
-			.crear_cuenta_tab a {
-				color: #5d9cec;
-			}
-			#emailField {
-				display: none;
-			}
-			@media (width < 700px) {
-				.nav_bar {
-					flex-direction: column;
-					align-items: center;
-					padding: 0.5rem;
-				}
-				.nav_bar a {
-					padding: 0.25rem 0.5rem;
-				}
-				.header_container {
-					text-align: center;
-				}
-
-				.header_container h4 {
-					margin-left: 0;
-				}
-			}
-		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="" />
+		<title>GAMERTECA Iniciar Sesión   </title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css">
 	</head>
-	<!--Start of Tawk.to Script-->
-	<script type="text/javascript">
-		var Tawk_API = Tawk_API || {},
-			Tawk_LoadStart = new Date();
-		(function () {
-			var s1 = document.createElement("script"),
-				s0 = document.getElementsByTagName("script")[0];
-			s1.async = true;
-			s1.src = "https://embed.tawk.to/6629d1a51ec1082f04e694e8/1hs9lls03";
-			s1.charset = "UTF-8";
-			s1.setAttribute("crossorigin", "*");
-			s0.parentNode.insertBefore(s1, s0);
-		})();
-	</script>
-	<!--End of Tawk.to Script-->
-	<body>
+	<body class="">
 		<header>
-			<nav>
-				<div class="nav_bar">
-					<div class="nav_logo">
-						<a href="Pagina Principal.html" class="logo"
-							>GAMERTECA</a
-						>
-					</div>
-					<ul class="nav_links">
-						<li class="link">
-							<a href="Lanzamientos.html" target="_self"
+			<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+				<div class="container-fluid">
+					<a
+						class="navbar-brand logo ps-3"
+						href="Pagina Principal.html"
+						>GAMERTECA</a
+					>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNav"
+						aria-controls="navbarNav"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<div class="navbar-nav ms-auto">
+							<a
+								class="nav-link fw-bold active"
+								href="Lanzamientos.html"
 								>Lanzamientos</a
 							>
-						</li>
-						<li class="link">
-							<a href="Eventos.html" target="_self">Eventos</a>
-						</li>
-						<li class="link">
-							<a href="Historia.html" target="_self">Historia</a>
-						</li>
-					</ul>
+							<a
+								class="nav-link fw-bold active"
+								href="Eventos.html"
+								>Eventos</a
+							>
+							<a
+								class="nav-link fw-bold active"
+								href="Historia.html"
+								>Historia</a
+							>
+							<a class="nav-link fw-bold" href="InicioSesion.html"
+								>Iniciar Sesión</a
+							>
+						</div>
+					</div>
 				</div>
 			</nav>
 		</header>
-		<section class="center">
-			<div class="content">
-				<div class="panel">
-					<div class="panel_header">
-						<a href="Pagina Principal.html" class="logo"
-							>GAMERTECA</a
+
+		<main class="form-signin w-100 m-auto">
+            <form>
+              <div class="nav_logo">
+                <a href="Pagina Principal.html" class="logo">GAMERTECA</a>
+              </div>
+              <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+              
+              <ul class="nav nav-tabs mb-3" id="loginTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Iniciar Sesión</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Crear Cuenta</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Correo electrónico</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Contraseña</label>
+                  </div>
+                  <div class="form-check text-start my-3">
+                    <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">Recuerdame</label>
+                  </div>
+                  <button class="btn btn-primary w-100 py-2" type="submit">Iniciar Sesión</button>
+                </div>
+                <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                  <div class="form-floating">
+                    <input type="email" class="form-control" id="floatingInput2" placeholder="name@example.com">
+                    <label for="floatingInput2">Correo electrónico</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword2" placeholder="Password">
+                    <label for="floatingPassword2">Contraseña</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword3" placeholder="Password">
+                    <label for="floatingPassword3">Confirmar Contraseña</label>
+                  </div>
+                  <button class="btn btn-primary w-100 py-2" type="submit">Crear Cuenta</button>
+                </div>
+              </div>
+            </form>
+          </main>
+		<footer class="footer bg-black text-white py-4">
+			<div class="container text-center">
+				<h4 class="logo">GAMERTECA</h4>
+				<p>
+					Página destinada a la información, difusión y
+					entretenimiento sobre videojuegos.
+				</p>
+				<ul class="list-inline">
+					<li class="list-inline-item">
+						<a href="Comentarios.html" class="text-white"
+							>Comentarios</a
 						>
-					</div>
-
-					<div class="panel_body">
-						<nav class="nav_bar_panel">
-							<ul>
-								<li class="sesion_tab activo">
-									<a href="#login">Iniciar Sesión</a>
-								</li>
-								<li class="crear_cuenta_tab">
-									<a href="#signup">Crear Cuenta</a>
-								</li>
-							</ul>
-						</nav>
-
-						<form
-							role="form"
-							data-parsley-validate=""
-							novalidate=""
+					</li>
+					<li class="list-inline-item">
+						<a
+							href="https://www.facebook.com/GamertecaGTC/"
+							class="text-white"
 						>
-							<div class="input_box">
-								<input
-									type="email"
-									class="form_input"
-									placeholder="Nombre de ususario"
-								/>
-							</div>
-
-							<div class="input_box">
-								<input
-									type="password"
-									class="form_input"
-									placeholder="Contraseña"
-								/>
-							</div>
-							<div>
-								<input
-									type="email"
-									class="form_input"
-									placeholder="Correo electrónico"
-									id="emailField"
-								/>
-							</div>
-
-							<div class="recordar_sesion">
-								<span class="recordar">
-									<input
-										type="checkbox"
-										id="recuerdame"
-										checked="checked"
-									/>
-									<label for="recuerdame"
-										>Recordar sesión</label
-									>
-								</span>
-
-								<a href="" class="crear_cuenta">Crear cuenta</a>
-							</div>
-							<button
-								type="submit"
-								class="button"
-								id="btnIniciarSesion"
-							>
-								Iniciar Sesión
-							</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<footer>
-			<section class="footer">
-				<div class="section_container footer_container">
-					<a href="#" id="logo_footer" class="logo"
-						><h4>GAMERTECA</h4></a
+							Facebook
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a
+							href="https://www.instagram.com/elgamer_inexperto/?hl=en"
+							class="text-white"
+						>
+							Instagram
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a
+							href="https://twitter.com/gamerteca?lang=en"
+							class="text-white"
+						>
+							Twitter
+						</a>
+					</li>
+				</ul>
+				<div class="border-top border-white pt-2">
+					<a
+						href="https://github.com/MadManJohnSmith/ProyectoHW"
+						class="text-white"
 					>
-					<div>
 						<p>
-							Pagina destinada a la informacion, difusion y
-							entretenimiento sobre videojuegos.
-						</p>
-					</div>
-					<div class="footer_socials">
-						<span>
-							<a href="Comentarios.html"
-								><i class="Comentarios"></i>Comentarios</a
-							>
-						</span>
-						<span>
-							<a href="https://www.facebook.com/GamertecaGTC/"
-								><i class="ri-facebook-fill"></i>Facebook</a
-							>
-						</span>
-						<span>
-							<a
-								href="https://www.instagram.com/elgamer_inexperto/?hl=en"
-								><i class="ri-instagram-fill"></i>Instagram</a
-							>
-						</span>
-						<span>
-							<a href="https://twitter.com/gamerteca?lang=en"
-								><i class="ri-twitter-fill"></i>Twitter</a
-							>
-						</span>
-					</div>
-				</div>
-				<div class="footer_bar">
-					<a href="https://github.com/MadManJohnSmith/ProyectoHW"
-						><p>
-							BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
+							BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA
 							<br />
-							FACULTAD DE CIENCIAS DE LA COMPUTACION
+							FACULTAD DE CIENCIAS DE LA COMPUTACIÓN
 							<br />
 							2024
-						</p></a
-					>
+						</p>
+					</a>
 				</div>
-			</section>
+			</div>
 		</footer>
-		<script>
-			// Obtenemos los elementos de las pestañas
-			const iniciarSesionTab = document.querySelector(".sesion_tab");
-			const crearCuentaTab = document.querySelector(".crear_cuenta_tab");
-
-			// Obtenemos el campo de correo electrónico
-			const emailField = document.getElementById("emailField");
-
-			// Asignamos los eventos de clic a las pestañas
-			iniciarSesionTab.addEventListener("click", function () {
-				// Ocultamos el campo de correo electrónico al hacer clic en "Iniciar Sesión"
-				emailField.style.display = "none";
-
-				// Agregamos la clase "activo" a sesion_tab y removemos la clase "activo" de crear_cuenta_tab
-				iniciarSesionTab.classList.add("activo");
-				crearCuentaTab.classList.remove("activo");
-
-				// Cambiamos el color del texto del elemento que no tiene la clase activo
-				crearCuentaTab.querySelector("a").style.color = "#5d9cec";
-				iniciarSesionTab.querySelector("a").style.color = "";
-			});
-
-			crearCuentaTab.addEventListener("click", function () {
-				// Mostramos el campo de correo electrónico al hacer clic en "Crear Cuenta"
-				emailField.style.display = "block";
-
-				// Agregamos la clase "activo" a crear_cuenta_tab y removemos la clase "activo" de sesion_tab
-				crearCuentaTab.classList.add("activo");
-				iniciarSesionTab.classList.remove("activo");
-
-				// Cambiamos el color del texto del elemento que no tiene la clase activo
-				iniciarSesionTab.querySelector("a").style.color = "#5d9cec";
-				crearCuentaTab.querySelector("a").style.color = "";
-			});
-			// Obtenemos el botón de iniciar sesión
-			const btnIniciarSesion = document.querySelector(".button");
-
-			// Agregamos un evento de clic al botón
-			btnIniciarSesion.addEventListener("click", function (event) {
-				// Prevenir el comportamiento por defecto del botón (enviar el formulario)
-				event.preventDefault();
-
-				// Obtenemos los valores de los campos de entrada
-				const nombreUsuario =
-					document.querySelector(".form_input").value;
-				const contraseña =
-					document.querySelectorAll(".form_input")[1].value; // Segundo campo de entrada
-				// Verificamos si alguno de los campos está vacío
-				if (nombreUsuario.trim() === "" || contraseña.trim() === "") {
-					// Si algún campo está vacío, mostramos un mensaje de error
-					alert(
-						"Por favor completa todos los campos antes de iniciar sesión."
-					);
-				} else {
-					// Si todos los campos están completos, mostramos el alert de bienvenida y redirigimos
-					alert("Bienvenido " + nombreUsuario);
-					window.location.href = "Pagina Principal.html";
-				}
-			});
-		</script>
-		<script></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>

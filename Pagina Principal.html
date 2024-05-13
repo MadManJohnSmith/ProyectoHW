@@ -1,816 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-bs-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-		<script src="https://unpkg.com/scrollreveal"></script>
-		<style>
-			@import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
-			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
-			.logo {
-				font-size: 1.3rem;
-				font-weight: 400;
-				color: var(--white);
-				font-family: "Press Start 2P", system-ui;
-				font-style: normal;
-			}
-			.nav_bar {
-				display: flex;
-				justify-content: space-between;
-				max-width: var(--max-width);
-				margin: auto;
-				padding: 1.2rem 1rem;
-				align-items: center;
-				gap: 2rem;
-			}
-
-			.nav_links {
-				display: flex;
-				list-style: none;
-				align-items: center;
-				gap: 2rem;
-				font-size: 1rem;
-			}
-
-			.link a {
-				padding: 1.3rem 5px;
-				font-weight: 500;
-				color: var(--white);
-				transition: 0.3s;
-			}
-
-			.link a:hover {
-				color: var(--secondary-color);
-				border-bottom: 2px solid var(--secondary-color);
-			}
-
-			.link span {
-				padding: 1rem 0;
-				color: var(--white);
-				cursor: pointer;
-			}
-			#sesionbutton {
-				font-size: 14px;
-				font-family: system-ui, -apple-system, BlinkMacSystemFont,
-					"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-					"Helvetica Neue", sans-serif;
-			}
-			:root {
-				--primary-color: #0a0d14;
-				--primary-color-light: #20242f;
-				--secondary-color: #f49e09;
-				--extra-light: rgba(255, 255, 255, 0.5);
-				--white: #ffffff;
-				--max-width: 1200px;
-				--header-font: "Lisu Bosa", serif;
-			}
-			img {
-				width: 100%;
-				display: flex;
-			}
-			a {
-				text-decoration: none;
-				color: var(--white);
-			}
-
-			* {
-				padding: 0;
-				margin: 0;
-				box-sizing: border-box;
-			}
-			nav {
-				display: block;
-				unicode-bidi: isolate;
-				background-color: rgba(0, 0, 0, 0.5);
-				border-bottom: 1px solid var(--extra-light);
-				position: relative;
-				z-index: 1000;
-			}
-			body {
-				font-family: "Poppins", sans-serif;
-				color: var(--white);
-				background-color: var(--primary-color);
-			}
-			footer .section_container {
-				margin-bottom: 0;
-				padding-bottom: 0rem;
-			}
-			.footer_container {
-				text-align: center;
-			}
-
-			.footer_container h4 {
-				margin-bottom: 1rem;
-				font-size: 1.5rem;
-				font-weight: 600;
-			}
-
-			.footer_socials {
-				margin-bottom: 2rem;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 2rem;
-			}
-
-			.footer_socials span a {
-				font-size: 1rem;
-				color: var(--white);
-				cursor: pointer;
-				transition: 0.3s;
-				text-decoration: none;
-			}
-
-			.footer_socials span a:hover {
-				color: var(--secondary-color);
-			}
-
-			.footer_container p {
-				max-width: 600px;
-				margin: auto;
-				margin-bottom: 2rem;
-			}
-
-			.footer_nav {
-				list-style: none;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				flex-wrap: wrap;
-				gap: 2rem;
-			}
-
-			.footer_link a {
-				font-weight: 500;
-				color: var(--white);
-				text-decoration: none;
-			}
-
-			.footer_link a:hover {
-				color: var(--secondary-color);
-			}
-
-			.footer_bar {
-				padding: 1rem;
-				text-align: center;
-				font-size: 0.8rem;
-				border-top: 1px solid var(--extra-light);
-			}
-			.footer_bar p {
-				color: var(--white);
-			}
-			.section_container {
-				max-width: var(--max-width);
-				margin: auto;
-
-				margin-bottom: 1.5rem;
-				padding: 2rem 1rem;
-			}
-
-			#featured {
-				background-image: linear-gradient(
-						to top,
-						var(--primary-color),
-						transparent
-					),
-					url("https://web-assets.esetstatic.com/wls/2021/08/por-qu%C3%A9-compa%C3%B1%C3%ADas-videojuegos-son-blanco-atractivo-cibercriminales.jpg");
-				background-position: center center;
-				background-size: cover;
-				background-repeat: no-repeat;
-			}
-			.btn {
-				position: relative;
-				background-color: #354e6c;
-				color: white;
-				padding: 15px 32px;
-				text-align: center;
-				display: inline-block;
-				font-size: 16px;
-				margin: 4px 2px;
-				cursor: pointer;
-				border: none;
-				border-radius: 30px;
-				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-				transition: all 0.3s ease;
-				overflow: hidden;
-			}
-			.btn:hover {
-				background-color: #2d3f5a;
-				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-			}
-			.about_container {
-				display: grid;
-				grid-template-columns: repeat(2, 1fr);
-				gap: 2rem;
-				align-items: center;
-			}
-
-			.about_container :is(.section_header, .section_subheader) {
-				text-align: left;
-			}
-
-			.about_flex {
-				margin: 2rem 0;
-				padding: 2rem 1rem;
-				display: flex;
-				align-items: center;
-				gap: 1rem;
-				flex-wrap: wrap;
-				background-color: var(--primary-color-light);
-			}
-
-			.about_card {
-				flex: 1 1 150px;
-				text-align: center;
-				border-right: 2px solid var(--primary-color);
-			}
-
-			.about_card:last-child {
-				border: none;
-			}
-
-			.about_card h4 {
-				margin-bottom: 5px;
-				font-size: 3rem;
-				font-weight: 600;
-				font-family: var(--header-font);
-			}
-
-			.about_card p {
-				font-size: 0.9rem;
-			}
-
-			.about_image img {
-				max-width: 450px;
-				margin: auto;
-			}
-			.discover {
-				background-image: linear-gradient(
-					to bottom,
-					rgba(255, 255, 255, 0.05),
-					transparent
-				);
-			}
-
-			.discover_grid {
-				margin-top: 2rem;
-				display: grid;
-				grid-template-columns: repeat(3, 1fr);
-				gap: 2rem;
-			}
-
-			.discover_card {
-				max-width: 375px;
-				margin: auto;
-			}
-
-			.discover_image {
-				width: 300px;
-				height: 300px;
-				border: 2px solid black;
-				overflow: hidden;
-				border-radius: 30px;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-
-			.discover_image img {
-				width: 100%;
-				height: auto;
-				object-fit: fill;
-			}
-
-			.discover_image::after {
-				position: absolute;
-				content: "";
-				width: 100%;
-				height: 50%;
-				left: 0;
-				bottom: 0;
-				background-image: linear-gradient(
-					to top,
-					var(--primary-color),
-					transparent
-				);
-			}
-
-			.discover_card_content {
-				padding: 1.5rem;
-			}
-
-			.discover_card_content h4 {
-				margin-bottom: 1rem;
-				font-size: 2rem;
-				font-weight: 800;
-				font-family: var(--header-font);
-				color: var(--secondary-color);
-			}
-
-			.discover_card_content p {
-				margin-bottom: 2rem;
-			}
-
-			.discover_btn {
-				padding: 0.75rem 1rem;
-				outline: none;
-				font-size: 1rem;
-				color: var(--white);
-				background-color: transparent;
-				border: 1px solid var(--white);
-				cursor: pointer;
-				border-radius: 25px;
-			}
-			.discover_btn:hover {
-				background-color: #272a31;
-				color: var(--primary-color);
-				font-weight: 600;
-				color: var(--white);
-				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-			}
-
-			.blogs_grid {
-				margin-top: 2rem;
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-			}
-
-			.blogs_card {
-				position: relative;
-			}
-			.blogs_card {
-				transition: transform 0.3s, opacity 0.3s, background-color 0.3s,
-					box-shadow 0.3s;
-			}
-
-			.blogs_card:hover {
-				transform: scale(1.1);
-				z-index: 1;
-			}
-
-			.blogs_content {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				padding: 2rem;
-				font-size: 1.2rem;
-				font-weight: 500;
-				z-index: 1;
-			}
-			.blogs_content p {
-				color: white;
-				text-shadow: -1px 0 black, 0 1px black, 1px 0 black,
-					0 -1px black;
-			}
-
-			.section_header {
-				font-size: 3rem;
-				font-weight: 800;
-				font-family: var(--header-font);
-				text-align: center;
-			}
-
-			.section_subheader {
-				max-width: 600px;
-				margin: auto;
-				text-align: center;
-			}
-			@media (width < 900px) {
-				.about_container {
-					grid-template-columns: repeat(1, 1fr);
-					text-align: center;
-				}
-
-				.about_container :is(.section_header, .section_subheader) {
-					text-align: center;
-				}
-
-				.about_image {
-					grid-area: 1/1/1/1;
-				}
-
-				.discover_grid {
-					grid-template-columns: repeat(2, 1fr);
-				}
-
-				.blogs_grid {
-					grid-template-columns: repeat(2, 1fr);
-				}
-
-				.journals_grid {
-					grid-template-columns: repeat(2, 1fr);
-					gap: 1rem;
-				}
-
-				.hero_container p {
-					font-size: 10rem;
-				}
-
-				.gallery_grid {
-					grid-template-columns: repeat(3, 1fr);
-				}
-
-				.contact_container {
-					grid-template-columns: repeat(2, 1fr);
-				}
-
-				.contact_col:first-child {
-					grid-area: 1/1/2/3;
-					text-align: center;
-				}
-			}
-
-			@media (width < 700px) {
-				.nav_bar {
-					flex-direction: column;
-					align-items: center;
-					padding: 0.5rem;
-				}
-				.nav_bar a {
-					padding: 0.25rem 0.5rem;
-				}
-				.header_container {
-					text-align: center;
-				}
-
-				.header_container h4 {
-					margin-left: 0;
-				}
-
-				.about_card {
-					border: none;
-				}
-				.about_container {
-					grid-template-columns: repeat(1, 1fr);
-				}
-
-				.discover_grid {
-					grid-template-columns: repeat(1, 1fr);
-				}
-				.blogs_grid {
-					grid-template-columns: repeat(2, 1fr);
-				}
-				.discover_card {
-					display: flex;
-					flex-wrap: wrap;
-					justify-content: center;
-					align-items: center;
-				}
-
-				.journals_grid {
-					grid-template-columns: repeat(1, 1fr);
-				}
-
-				.hero_container p {
-					font-size: 6rem;
-				}
-
-				.gallery_grid {
-					grid-template-columns: repeat(2, 1fr);
-				}
-
-				.contact_container {
-					grid-template-columns: repeat(1, 1fr);
-				}
-
-				.contact_col:first-child {
-					grid-area: unset;
-				}
-			}
-		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>GAMERTECA</title>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="styles.css">
 	</head>
-	<!--Start of Tawk.to Script-->
-	<script type="text/javascript">
-		var Tawk_API = Tawk_API || {},
-			Tawk_LoadStart = new Date();
-		(function () {
-			var s1 = document.createElement("script"),
-				s0 = document.getElementsByTagName("script")[0];
-			s1.async = true;
-			s1.src = "https://embed.tawk.to/6629d1a51ec1082f04e694e8/1hs9lls03";
-			s1.charset = "UTF-8";
-			s1.setAttribute("crossorigin", "*");
-			s0.parentNode.insertBefore(s1, s0);
-		})();
-	</script>
-	<!--End of Tawk.to Script-->
-	<body>
+	<body class="bg-black">
 		<header>
-			<nav>
-				<div class="nav_bar">
-					<div class="nav_logo">
-						<a href="Pagina Principal.html" class="logo"
-							>GAMERTECA</a
-						>
-					</div>
-					<ul class="nav_links">
-						<li class="link">
-							<a href="Lanzamientos.html" target="_self"
+			<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+				<div class="container-fluid">
+					<a
+						class="navbar-brand logo ps-3"
+						href="Pagina Principal.html"
+						>GAMERTECA</a
+					>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarNav"
+						aria-controls="navbarNav"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<div class="navbar-nav ms-auto">
+							<a
+								class="nav-link fw-bold active"
+								href="Lanzamientos.html"
 								>Lanzamientos</a
 							>
-						</li>
-						<li class="link">
-							<a href="Eventos.html" target="_self">Eventos</a>
-						</li>
-						<li class="link">
-							<a href="Historia.html" target="_self">Historia</a>
-						</li>
-						<li class="link">
-							<a id="sesionbutton" href="InicioSesion.html"
+							<a
+								class="nav-link fw-bold active"
+								href="Eventos.html"
+								>Eventos</a
+							>
+							<a
+								class="nav-link fw-bold active"
+								href="Historia.html"
+								>Historia</a
+							>
+							<a class="nav-link fw-bold" href="InicioSesion.html"
 								>Iniciar Sesión</a
 							>
-						</li>
-					</ul>
+						</div>
+					</div>
 				</div>
 			</nav>
 		</header>
 
-		<section id="featured">
-			<div class="section_container header_container">
-				<h1>EVO 2024</h1>
-				<h4>El EVO CHAMPIONSHIP SERIES cada vez esta mas cerca</h4>
-				<a href="https://www.youtube.com/watch?v=CQ9cayRx0FI"
-					><button class="btn">Saber Mas <i></i></button
-				></a>
+		<section
+			id="featured"
+			class="bg-dark text-white py-4 text-center"
+			style="
+				background-image: linear-gradient(
+						to top,
+						rgba(0, 0, 0, 1),
+						transparent
+					),
+					url('https://web-assets.esetstatic.com/wls/2021/08/por-qu%C3%A9-compa%C3%B1%C3%ADas-videojuegos-son-blanco-atractivo-cibercriminales.jpg');
+				background-size: cover;
+				background-position: center;
+			"
+		>
+			<div class="container">
+				<h1 class="display-7 fade-in">EVO 2024</h1>
+				<p class="lead fade-in">
+					El EVO CHAMPIONSHIP SERIES cada vez está más cerca
+				</p>
+				<a
+					href="https://www.youtube.com/watch?v=CQ9cayRx0FI"
+					class="btn fade-in"
+				>
+					Saber Más
+				</a>
 			</div>
 		</section>
 
-		<section class="about" id="about">
-			<div class="section_container about_container">
-				<div class="abouti8_content">
-					<h2 class="section_header">¿Evento del año?</h2>
-					<p class="section_subheader">
-						La competencia de juegos de pelea mas importante del
-						mundo se acerca, una nueva edicion de este torneo se
+		<section class="container py-5">
+			<div class="row mb-4">
+				<div class="col-md-6 bg-dark p-3 rounded fade-in">
+					<h2>¿Evento del año?</h2>
+					<p>
+						La competencia de juegos de pelea más importante del
+						mundo se acerca, una nueva edición de este torneo se
 						aproxima y figuras del mundo de los esports como MKLEO,
-						MENA, SONICFOX, FILIPINOCHANG, etc. Se preparan para la
-						contienda y ver quien se convierte en el rey definitivo,
-						juegos como MORTAL KOMBAT, KOF, MARVEL VS CAPCOM seran
-						los protagonistas de esta edicion.
+						MENA, SONICFOX, FILIPINOCHANG, etc. se preparan para la
+						contienda. Juegos como MORTAL KOMBAT, KOF, MARVEL VS
+						CAPCOM serán los protagonistas de esta edición.
 					</p>
-					<div class="about_flex">
-						<div class="about_card">
+					<div class="row g-3">
+						<div class="border-end col-sm-4">
 							<h4>Ubicación</h4>
 							<p>Centro de convenciones Las Vegas, Nevada</p>
 						</div>
-						<div class="about_card">
+						<div class="border-end col-sm-4">
 							<h4>Fecha</h4>
 							<p>19-21 de Julio</p>
 						</div>
-						<div class="about_card">
+						<div class="border-end col-sm-4">
 							<h4>Streaming</h4>
-							<p>Twich, Kick, Facebook Gaming</p>
+							<p>Twitch, Kick, Facebook Gaming</p>
 						</div>
 					</div>
 				</div>
-				<div class="about_image">
+				<div class="col-md-6">
 					<img
 						src="https://ca-times.brightspotcdn.com/dims4/default/cd4bb47/2147483647/strip/true/crop/5568x3712+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F8e%2Fe2%2Fe6e96d17476db254d9d0e95bf6f1%2Fhttps-delivery.gettyimages.com%2Fdownloads%2F1149603451"
-						alt="about"
+						alt="EVO"
+						class="img-fluid rounded fade-in"
 					/>
 				</div>
 			</div>
 		</section>
 
-		<section class="discover" id="discover">
-			<div class="section_container discover_container">
-				<h2 class="section_header">NOVEDADES</h2>
-				<p class="section_subheader">Lo Nuevo del mundo virtual</p>
-				<div class="discover_grid">
-					<div class="discover_card">
-						<div class="discover_image">
+		<section class="bg-dark py-5 text-center">
+			<div class="container">
+				<h2 class="mb-4 fade-in">NOVEDADES</h2>
+				<p class="lead mb-5 fade-in">Lo nuevo del mundo virtual</p>
+				<div class="row g-4">
+					<div class="col-md-4">
+						<div class="card h-100 fade-in">
 							<img
 								src="https://i.pinimg.com/originals/fc/84/0d/fc840d0db64fab10717846f3d11efb66.jpg"
-								alt="discover"
+								class="card-img-top"
+								alt="CALL OF DUTY: WARZONE"
 							/>
-						</div>
-						<div class="discover_card_content">
-							<h4>ACTUALIZACION</h4>
-							<p>
-								Una actualzación llega a CALL OF DUTY: WARZONE,
-								nuevo contenido se acerca, accion, nuevas armas,
-								lugares por descubrir, !LISTOS PARA LA BATALLA¡
-							</p>
-							<button class="discover_btn">
+							<div class="card-body">
+								<h4 class="card-title">ACTUALIZACIÓN</h4>
+								<p class="card-text">
+									Una actualización llega a CALL OF DUTY:
+									WARZONE, nuevo contenido se acerca, acción,
+									nuevas armas, lugares por descubrir. ¡Listos
+									para la batalla!
+								</p>
 								<a
 									href="https://www.callofduty.com/mx/es/blog/2024/03/call-of-duty-modern-warfare-iii-warzone-wzm-season-3-maps-modes-zombies-announcement"
-									>Leer Mas <i class="ri-arrow-right-line"></i
-								></a>
-							</button>
+									class="btn btn-primary"
+								>
+									Leer Más
+								</a>
+							</div>
 						</div>
 					</div>
-					<div class="discover_card">
-						<div class="discover_image">
+					<div class="col-md-4">
+						<div class="card h-100 fade-in">
 							<img
 								src="https://image.api.playstation.com/vulcan/ap/rnd/202402/0521/624495f6f4e8b6c8b41bb28672979c27ca0941f49b7ad771.png"
-								alt="discover"
+								class="card-img-top"
+								alt="Formula 1"
 							/>
-						</div>
-						<div class="discover_card_content">
-							<h4>BOX BOX</h4>
-							<p>
-								Una nueva entrega de Formula 1 esta llegando,
-								conduce por las calles de Monaco o prueba la
-								nueva pista de las Vegas.
-							</p>
-							<button class="discover_btn">
+							<div class="card-body">
+								<h4 class="card-title">BOX BOX</h4>
+								<p class="card-text">
+									Una nueva entrega de Formula 1 está
+									llegando. Conduce por las calles de Mónaco o
+									prueba la nueva pista de Las Vegas.
+								</p>
 								<a
 									href="https://www.ea.com/es-es/games/f1/f1-24"
-									>Leer Mas <i class="ri-arrow-right-line"></i
-								></a>
-							</button>
+									class="btn btn-primary"
+								>
+									Leer Más
+								</a>
+							</div>
 						</div>
 					</div>
-					<div class="discover_card">
-						<div class="discover_image">
+					<div class="col-md-4">
+						<div class="card h-100 fade-in">
 							<img
 								src="https://i.pinimg.com/736x/b7/64/d3/b764d3546a4a6910acb27faf851af2ab.jpg"
-								alt="discover"
+								class="card-img-top"
+								alt="Minecraft"
 							/>
-						</div>
-						<div class="discover_card_content">
-							<h4>EL REY</h4>
-							<p>
-								Minecraft se adueña de las plataformas de
-								streamig, posicionandose como el preferido de la
-								Comunidad
-							</p>
-							<button class="discover_btn">
+							<div class="card-body">
+								<h4 class="card-title">EL REY</h4>
+								<p class="card-text">
+									Minecraft se adueña de las plataformas de
+									streaming, posicionándose como el preferido
+									de la comunidad.
+								</p>
 								<a
 									href="https://www.minecraft.net/es-mx/about-minecraft"
-									>Leer Mas <i class="ri-arrow-right-line"></i
-								></a>
-							</button>
+									class="btn btn-primary"
+								>
+									Leer Más
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="blogs" id="blog">
-			<div class="blogs_container">
-				<h2 class="section_header">Entretenimiento</h2>
-				<p class="section_subheader">
-					Informacion, datos curiosos, historias, top's, todo eso y
-					mas aqui.
-				</p>
-				<div class="blogs_grid">
-					<div class="blogs_card">
-						<a href="https://www.youtube.com/@elfedelobo"
-							><img
+		<section class="container py-5">
+			<h2 class="text-center mb-4">Entretenimiento</h2>
+			<p class="lead text-center mb-5">
+				Información, datos curiosos, historias, top's, todo eso y más
+				aquí.
+			</p>
+			<div class="row g-4">
+				<div class="col-md-3">
+					<div class="card fade-in">
+						<div class="card-header">
+							<p class="card-text">FEDELOBO</p>
+						</div>
+						<a href="https://www.youtube.com/@elfedelobo">
+							<img
 								src="https://static-cdn.jtvnw.net/jtv_user_pictures/elfedelobo-profile_image-1d74acb6f0797ea1-300x300.png"
-								alt="blog"
+								class="card-img-top"
+								alt="FEDELOBO"
 							/>
-							<div class="blogs_content"><p>FEDELOBO</p></div>
 						</a>
 					</div>
-					<div class="blogs_card">
-						<a href="https://www.youtube.com/@AtomiKO"
-							><img
+				</div>
+				<div class="col-md-3">
+					<div class="card fade-in">
+						<div class="card-header">
+							<p class="card-text">ATOMIK.O.</p>
+						</div>
+						<a href="https://www.youtube.com/@AtomiKO">
+							<img
 								src="https://yt3.googleusercontent.com/pA8UkZ4BMFB--f7Kdk3Upj8v3NxFGn_BDdm1EX1aXC94FDB3-b4IKsGeQ4tq_0Xg5J7QMMALO5o=s900-c-k-c0x00ffffff-no-rj"
-								alt="blog"
+								class="card-img-top"
+								alt="AtomiK.O"
 							/>
-							<div class="blogs_content"><p>AtomiK.O</p></div></a
-						>
+						</a>
 					</div>
-					<div class="blogs_card">
-						<a href="https://www.youtube.com/@PepeElMago"
-							><img
+				</div>
+				<div class="col-md-3">
+					<div class="card fade-in">
+						<div class="card-header">
+							<p class="card-text">PEPE EL MAGO</p>
+						</div>
+						<a href="https://www.youtube.com/@PepeElMago">
+							<img
 								src="https://static-cdn.jtvnw.net/jtv_user_pictures/92afa0c4-1237-492d-89a8-15f949f712c0-profile_image-300x300.png"
-								alt="blog"
+								class="card-img-top"
+								alt="PEPE EL MAGO"
 							/>
-							<div class="blogs_content">
-								<p>PEPE EL MAGO</p>
-							</div></a
-						>
+						</a>
 					</div>
-					<div class="blogs_card">
-						<a href="https://www.youtube.com/@ElUltimoCirculo"
-							><img
+				</div>
+				<div class="col-md-3">
+					<div class="card fade-in">
+						<div class="card-header">
+							<p class="card-text">EL ÚLTIMO CÍRCULO</p>
+						</div>
+						<a href="https://www.youtube.com/@ElUltimoCirculo">
+							<img
 								src="https://i.pinimg.com/originals/e0/a6/3d/e0a63d638fa1605aacf88a83401b22bb.jpg"
-								alt="blog"
+								class="card-img-top"
+								alt="El Último Círculo"
 							/>
-							<div class="blogs_content">
-								<p>EL ULTIMO CIRCULO</p>
-							</div></a
-						>
+						</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<footer>
-			<section class="footer">
-				<div class="section_container footer_container">
-					<a href="#" id="logo_footer" class="logo"
-						><h4>GAMERTECA</h4></a
+		<footer class="footer bg-black text-white py-4">
+			<div class="container text-center">
+				<h4 class="logo">GAMERTECA</h4>
+				<p>
+					Página destinada a la información, difusión y
+					entretenimiento sobre videojuegos.
+				</p>
+				<ul class="list-inline">
+					<li class="list-inline-item">
+						<a href="Comentarios.html" class="text-white"
+							>Comentarios</a
+						>
+					</li>
+					<li class="list-inline-item">
+						<a
+							href="https://www.facebook.com/GamertecaGTC/"
+							class="text-white"
+						>
+							Facebook
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a
+							href="https://www.instagram.com/elgamer_inexperto/?hl=en"
+							class="text-white"
+						>
+							Instagram
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a
+							href="https://twitter.com/gamerteca?lang=en"
+							class="text-white"
+						>
+							Twitter
+						</a>
+					</li>
+				</ul>
+				<div class="border-top border-white pt-2">
+					<a
+						href="https://github.com/MadManJohnSmith/ProyectoHW"
+						class="text-white"
 					>
-					<div>
 						<p>
-							Pagina destinada a la informacion, difusion y
-							entretenimiento sobre videojuegos.
-						</p>
-					</div>
-					<div class="footer_socials">
-						<span>
-							<a href="Comentarios.html">Comentarios</a>
-						</span>
-						<span>
-							<a href="https://www.facebook.com/GamertecaGTC/"
-								><i class="ri-facebook-fill"></i>Facebook</a
-							>
-						</span>
-						<span>
-							<a
-								href="https://www.instagram.com/elgamer_inexperto/?hl=en"
-								><i class="ri-instagram-fill"></i>Instagram</a
-							>
-						</span>
-						<span>
-							<a href="https://twitter.com/gamerteca?lang=en"
-								><i class="ri-twitter-fill"></i>Twitter</a
-							>
-						</span>
-					</div>
-				</div>
-				<div class="footer_bar">
-					<a href="https://github.com/MadManJohnSmith/ProyectoHW"
-						><p>
-							BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA
+							BENEMÉRITA UNIVERSIDAD AUTÓNOMA DE PUEBLA
 							<br />
-							FACULTAD DE CIENCIAS DE LA COMPUTACION
+							FACULTAD DE CIENCIAS DE LA COMPUTACIÓN
 							<br />
 							2024
-						</p></a
-					>
+						</p>
+					</a>
 				</div>
-			</section>
+			</div>
 		</footer>
-		<script>
-			const scrollRevealOption = {
-				distance: "50px",
-				origin: "bottom",
-				duration: 1000,
-			};
-
-			// header container
-			ScrollReveal().reveal(".header_container h1", scrollRevealOption);
-
-			ScrollReveal().reveal(".header_container h4", {
-				...scrollRevealOption,
-				delay: 100,
-			});
-
-			ScrollReveal().reveal(".header_container .btn", {
-				...scrollRevealOption,
-				delay: 100,
-			});
-
-			// about container
-			ScrollReveal().reveal(
-				".about_container .section_header",
-				scrollRevealOption
-			);
-			ScrollReveal().reveal(".about_container .section_subheader", {
-				...scrollRevealOption,
-				delay: 100,
-			});
-
-			ScrollReveal().reveal(".about_container .about_flex", {
-				...scrollRevealOption,
-				delay: 100,
-			});
-
-			ScrollReveal().reveal(".about_container .btn", {
-				...scrollRevealOption,
-				delay: 100,
-			});
-
-			// discover container
-			ScrollReveal().reveal(".discover_card", {
-				...scrollRevealOption,
-				interval: 100,
-			});
-
-			ScrollReveal().reveal(".discover_card_content", {
-				...scrollRevealOption,
-				interval: 200,
-				delay: 100,
-			});
-
-			// blogs container
-			ScrollReveal().reveal(".blogs_card", {
-				duration: 500,
-				interval: 200,
-			});
-
-			// journals container
-			ScrollReveal().reveal(".journals_card", {
-				...scrollRevealOption,
-				interval: 100,
-			});
-		</script>
+		<!-- Bootstrap JS -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
 	</body>
 </html>
