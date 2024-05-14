@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       
+        @import url("https://fonts.googleapis.com/css2?family=Lisu+Bosa:wght@600;800&family=Poppins:wght@400;500;600;700&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+			.logo {
+				font-size: 1.3rem;
+				font-weight: 400;
+				color: var(--white);
+				font-family: "Press Start 2P", system-ui;
+				font-style: normal;
+			}
+			.material-symbols-outlined {
+				font-variation-settings: "NONE" 0, "wght" 4000, "GRAD" 0,
+					"opsz" 24;
+			}
+
+			.nav_bar {
+				display: flex;
+				justify-content: space-between;
+				max-width: var(--max-width);
+				margin: auto;
+				padding: 1.2rem 1rem;
+				align-items: center;
+				gap: 2rem;
+			}
+
+			.nav_logo a {
+				font-size: 1.3rem;
+				font-weight: 400;
+				color: var(--white);
+				font-family: "Press Start 2P", system-ui;
+				font-style: normal;
+			}
+
+			.nav_links {
+				font-size: 1rem;
+				display: flex;
+				list-style: none;
+				align-items: center;
+				gap: 2rem;
+			}
+
+			.link a {
+				padding: 1.3rem 5px;
+				font-weight: 500;
+				color: var(--white);
+				transition: 0.3s;
+			}
+
+			.link a:hover {
+				color: var(--secondary-color);
+				border-bottom: 2px solid var(--secondary-color);
+			}
+
+			.link span {
+				padding: 1rem 0;
+				color: var(--white);
+				cursor: pointer;
+			}
+			#sesionbutton {
+				font-size: 14px;
+				font-family: system-ui, -apple-system, BlinkMacSystemFont,
+					"Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+					"Helvetica Neue", sans-serif;
+			}
+			:root {
+				--primary-color: #0a0d14;
+				--primary-color-light: #20242f;
+				--secondary-color: #f49e09;
+				--extra-light: rgba(255, 255, 255, 0.5);
+				--white: #ffffff;
+				--max-width: 1200px;
+				--header-font: "Lisu Bosa", serif;
+			}
+			img {
+				width: 100%;
+				display: flex;
+			}
+			a {
+				text-decoration: none;
+				color: var(--white);
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			nav {
+				display: block;
+				unicode-bidi: isolate;
+				background-color: rgba(0, 0, 0, 0.5);
+				border-bottom: 1px solid var(--extra-light);
+				position: relative;
+				z-index: 1000;
+            }
+			body {
+				font-family: "Poppins", sans-serif;
+				color: var(--white);
+				background-color: var(--primary-color);
+			}
+			footer .section_container {
+				margin-bottom: 0;
+				padding-bottom: 0rem;
+				z-index: 0;
+			}
+			.footer_container {
+				text-align: center;
+			}
+
+			.footer_container h4 {
+				margin-bottom: 1rem;
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+
+			.footer_socials {
+				margin-bottom: 2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+			}
+
+			.footer_socials span a {
+				font-size: 1rem;
+				color: var(--white);
+				cursor: pointer;
+				transition: 0.3s;
+				text-decoration: none;
+			}
+
+			.footer_socials span a:hover {
+				color: var(--secondary-color);
+			}
+
+			.footer_container p {
+				max-width: 600px;
+				margin: auto;
+				margin-bottom: 2rem;
+			}
+
+			.footer_nav {
+				list-style: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 2rem;
+			}
+
+			.footer_link a {
+				font-weight: 500;
+				color: var(--white);
+				text-decoration: none;
+			}
+
+			.footer_link a:hover {
+				color: var(--secondary-color);
+			}
+
+			.footer_bar {
+				padding: 1rem;
+				text-align: center;
+				font-size: 0.8rem;
+				border-top: 1px solid var(--extra-light);
+			}
+			.footer_bar p {
+				color: var(--white);
+			}
+			.slider {
+				height: 100vh;
+				width: 100vw;
+				overflow: hidden;
+			}
+			.slider .list .item {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+			}
+			.slider .list .item img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.slider .list .item .content {
+				position: absolute;
+				top: 20%;
+				width: 1140px;
+				max-width: 80%;
+				left: 50%;
+				transform: translateX(-50%);
+				padding-right: 30%;
+				box-sizing: border-box;
+				color: #fff;
+				text-shadow: 0 5px 10px #0004;
+				font-size: 12px;
+			}
+
+			.slider .list .item .content .title,
+			.slider .list .item .content .type {
+				font-size: 5em;
+				font-weight: bold;
+				line-height: 1.3em;
+			}
+			.slider .list .item .type {
+				color: #14ff72cb;
+			}
+			.description {
+				flex-wrap: wrap;
+				max-width: 30rem;
+			}
+			.slider .list .item .button {
+				display: grid;
+				grid-template-columns: repeat(2, 130px);
+				grid-template-rows: 40px;
+				gap: 5px;
+				margin-top: 20px;
+			}
+			.slider .list .item .button button {
+				border: none;
+				background-color: #eee;
+				font-family: "Poppins", sans-serif;
+				font-weight: 500;
+				cursor: pointer;
+				transition: 0.4s;
+				letter-spacing: 2px;
+			}
+
+			.slider .list .item .button button:hover {
+				letter-spacing: 3px;
+			}
+			.slider .list .item .button button:nth-child(2) {
+				background-color: transparent;
+				border: 1px solid #fff;
+				color: #eee;
+			}
+
+			.thumbnail {
+				position: absolute;
+				bottom: 50px;
+				left: 50%;
+				width: max-content;
+				z-index: 100;
+				display: flex;
+				gap: 20px;
+			}
+
+			.thumbnail .item {
+				width: 150px;
+				height: 220px;
+				flex-shrink: 0;
+				position: relative;
+			}
+
+			.thumbnail .item img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 20px;
+				box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+			}
+
+			.nextPrevArrows {
+				position: absolute;
+				top: 80%;
+				right: 52%;
+				z-index: 100;
+				width: 300px;
+				max-width: 30%;
+				display: flex;
+				gap: 10px;
+				align-items: center;
+			}
+			.nextPrevArrows button {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background-color: #14ff72cb;
+				border: none;
+				color: #fff;
+				font-family: monospace;
+				font-weight: bold;
+				transition: 0.5s;
+				cursor: pointer;
+			}
+			.nextPrevArrows button:hover {
+				background-color: #fff;
+				color: #000;
+			}
+
+			.slider .list .item:nth-child(1) {
+				z-index: 1;
+			}
+
+			.slider .list .item:nth-child(1) .content .title,
+			.slider .list .item:nth-child(1) .content .type,
+			.slider .list .item:nth-child(1) .content .description,
+			.slider .list .item:nth-child(1) .content .buttons {
+				transform: translateY(50px);
+				filter: blur(20px);
+				opacity: 0;
+				animation: showContent 0.5s 1s linear 1 forwards;
+			}
+			@keyframes showContent {
+				to {
+					transform: translateY(0px);
+					filter: blur(0px);
+					opacity: 1;
+				}
+			}
+			.slider .list .item:nth-child(1) .content .title {
+				animation-delay: 0.4s !important;
+			}
+			.slider .list .item:nth-child(1) .content .type {
+				animation-delay: 0.6s !important;
+			}
+			.slider .list .item:nth-child(1) .content .description {
+				animation-delay: 0.8s !important;
+			}
+			.slider .list .item:nth-child(1) .content .buttons {
+				animation-delay: 1s !important;
+			}
+
+			.slider.next .list .item:nth-child(1) img {
+				width: 150px;
+				height: 220px;
+				position: absolute;
+				bottom: 50px;
+				left: 50%;
+				border-radius: 30px;
+				animation: showImage 0.5s linear 1 forwards;
+			}
+
+			@keyframes showImage {
+				to {
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border-radius: 0;
+				}
+			}
+
+			.slider.next .thumbnail .item:nth-last-child(1) {
+				overflow: hidden;
+				animation: showThumbnail 0.5s linear 1 forwards;
+			}
+			.slider.prev .list .item img {
+				z-index: 100;
+			}
+
+			@keyframes showThumbnail {
+				from {
+					width: 0;
+					opacity: 0;
+				}
+			}
+
+			.slider.next .thumbnail {
+				animation: effectNext 0.5s linear 1 forwards;
+			}
+
+			@keyframes effectNext {
+				from {
+					transform: translateX(150px);
+				}
+			}
+
+			.slider.prev .list .item:nth-child(2) {
+				z-index: 2;
+			}
+
+			.slider.prev .list .item:nth-child(2) img {
+				animation: outFrame 0.5s linear 1 forwards;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+			@keyframes outFrame {
+				to {
+					width: 150px;
+					height: 220px;
+					bottom: 50px;
+					left: 50%;
+					border-radius: 20px;
+				}
+			}
+
+			.slider.prev .thumbnail .item:nth-child(1) {
+				overflow: hidden;
+				opacity: 0;
+				animation: showThumbnail 0.5s linear 1 forwards;
+			}
+			.slider.next .nextPrevArrows button,
+			.slider.prev .nextPrevArrows button {
+				pointer-events: none;
+			}
+
+			.slider.prev .list .item:nth-child(2) .content .title,
+			.slider.prev .list .item:nth-child(2) .content .type,
+			.slider.prev .list .item:nth-child(2) .content .description,
+			.slider.prev .list .item:nth-child(2) .content .buttons {
+				animation: contentOut 1.5s linear 1 forwards !important;
+			}
+			#slide {
+				overflow: hidden;
+				margin-bottom: 1rem;
+			}
+			@keyframes contentOut {
+				to {
+					transform: translateY(-150px);
+					filter: blur(20px);
+					opacity: 0;
+				}
+			}
+			@media screen and (max-width: 678px) {
+				.slider .list .item .content {
+					padding-right: 0;
+				}
+				.slider .list .item .content .title {
+					font-size: 50px;
+				}
+			}
+			@media (width < 700px) {
+				.nav_bar {
+					flex-direction: column;
+					align-items: center;
+					padding: 0.5rem;
+				}
+				.nav_bar a {
+					padding: 0.25rem 0.5rem;
+				}
+			}
+    </style>
+</head>
+<script type="text/javascript">
+    var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+    (function () {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/6629d1a51ec1082f04e694e8/1hs9lls03";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+    })();
+</script>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">GAMERTECA</a>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="Lanzamientos.html" target="_self">Lanzamientos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Eventos.html" target="_self">Eventos</a></li>
+                    <li class="nav-item"><a id="sesionbutton" class="nav-link" href="InicioSesion.html">Iniciar Sesión</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="slide">
+       
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img
+                        src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2021/03/nintendo-switch-2268937.jpg?tf=3840x"
+                        alt=""
+                    />
+
+                    <div class="content">
+                        <div class="title">Nintendo</div>
+                        <div class="type">THERE`S NO PLAY LIKE IT</div>
+                        <div class="description">
+                            Nintendo Company, Ltd. es una empresa de
+                            entretenimiento dedicada a la investigación,
+                            desarrollo y distribución de software y hardware
+                            de videojuegos, y juegos de cartas, con sede en
+                            Kioto, Japón.​
+                        </div>
+                        <div class="button">
+                            <a
+                                href="https://www.youtube.com/watch?v=kleKetOBXC8"
+                                target="_blank"
+                            >
+                                <button>CONOCER MAS</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img
+                        src="https://www.cnet.com/a/img/resize/bebef835df90640f9aa2e4a2f2a2699cf53a301f/hub/2020/10/26/b60bfe6f-3193-4381-b0d4-ac628cdcc565/img-1419.jpg?auto=webp&width=1200"
+                        alt=""
+                    />
+
+                    <div class="content">
+                        <div class="title">PLAYSTATION</div>
+                        <div class="type">PLAY HAS NO LIMITS</div>
+                        <div class="description">
+                            La compañía fue fundada y establecida el 16 de
+                            noviembre de 1993, como Sony Computer
+                            Entertainment, para manejar la aventura de Sony
+                            en el desarrollo de videojuegos. Desde el
+                            lanzamiento exitoso de la consola PlayStation
+                            original en 1994.
+                        </div>
+                        <div class="button">
+                            <a
+                                href="https://www.youtube.com/watch?v=R4qG8rsa-AI"
+                                target="_blank"
+                            >
+                                <button>CONOCER MAS</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img
+                        src="https://cdn.mos.cms.futurecdn.net/eH7muHj6y4RyJ5QYkGX8oT.jpg"
+                        alt=""
+                    />
+
+                    <div class="content">
+                        <div class="title">XBOX</div>
+                        <div class="type">POWER YOUR DREAMS</div>
+                        <div class="description">
+                            Xbox es una marca de videojuegos creada por y
+                            propiedad de Microsoft que incluye una serie de
+                            videoconsolas desarrolladas por la misma
+                            compañía, de sexta a novena generación, así como
+                            aplicaciones (juegos), servicios de streaming y
+                            el servicio en línea Xbox Live. La marca fue
+                            introducida por primera vez el 8 de noviembre de
+                            2001 en los Estados Unidos, con el lanzamiento
+                            de la consola Xbox.
+                        </div>
+                        <div class="button">
+                            <a
+                                href="https://www.youtube.com/watch?v=uJzdQPBOvdY"
+                                target="_blank"
+                            >
+                                <button>CONOCER MAS</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thumbnail">
+                <div class="item">
+                    <img
+                        src="https://i.pinimg.com/236x/db/54/01/db54016a01f38667c0207ec8c0631a78.jpg"
+                        alt=""
+                    />
+                </div>
+                <div class="item">
+                    <img
+                        src="https://cdn.andro4all.com/andro4all/2021/09/PlayStation-Fondo.jpg?height=600"
+                        alt=""
+                    />
+                </div>
+                <div class="item">
+                    <img
+                        src="https://images.hdqwalls.com/wallpapers/xbox-ct.jpg"
+                        alt=""
+                    />
+                </div>
+            </div>
+
+            <div class="nextPrevArrows">
+                <button class="prev"><</button>
+                <button class="next">></button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <section class="footer">
+            <div class="container text-center">
+                <a href="#" id="logo_footer" class="navbar-brand"><h4>GAMERTECA</h4></a>
+                <p>Pagina destinada a la informacion, difusion y entretenimiento sobre videojuegos.</p>
+                <div class="footer_socials">
+                    <span><a href="Comentarios.html">Comentarios</a></span>
+                    <span><a href="https://www.facebook.com/GamertecaGTC/">Facebook</a></span>
+                    <span><a href="https://www.instagram.com/elgamer_inexperto/?hl=en">Instagram</a></span>
+                    <span><a href="https://twitter.com/gamerteca?lang=en">Twitter</a></span>
+                </div>
+            </div>
+            <div class="footer_bar bg-dark text-light py-2">
+                <a href="https://github.com/MadManJohnSmith/ProyectoHW"><p>BENEMERITA UNIVERSIDAD AUTONOMA DE PUEBLA <br> FACULTAD DE CIENCIAS DE LA COMPUTACION <br> 2024</p></a>
+            </div>
+        </section>
+    </footer>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Tu script personalizado aquí
+        let nextBtn = document.querySelector(".next");
+			let prevBtn = document.querySelector(".prev");
+
+			let slider = document.querySelector(".slider");
+			let sliderList = slider.querySelector(".slider .list");
+			let thumbnail = document.querySelector(".slider .thumbnail");
+			let thumbnailItems = thumbnail.querySelectorAll(".item");
+
+			thumbnail.appendChild(thumbnailItems[0]);
+
+			nextBtn.onclick = function () {
+				moveSlider("next");
+			};
+
+			prevBtn.onclick = function () {
+				moveSlider("prev");
+			};
+
+			function moveSlider(direction) {
+				let sliderItems = sliderList.querySelectorAll(".item");
+				let thumbnailItems =
+					document.querySelectorAll(".thumbnail .item");
+
+				if (direction === "next") {
+					sliderList.appendChild(sliderItems[0]);
+					thumbnail.appendChild(thumbnailItems[0]);
+					slider.classList.add("next");
+				} else {
+					sliderList.prepend(sliderItems[sliderItems.length - 1]);
+					thumbnail.prepend(
+						thumbnailItems[thumbnailItems.length - 1]
+					);
+					slider.classList.add("prev");
+				}
+
+				slider.addEventListener(
+					"animationend",
+					function () {
+						if (direction === "next") {
+							slider.classList.remove("next");
+						} else {
+							slider.classList.remove("prev");
+						}
+					},
+					{ once: true }
+				);
+			}
+    </script>
+</body>
+</html>
